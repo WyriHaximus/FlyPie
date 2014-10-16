@@ -1,0 +1,39 @@
+{
+    "name": "wyrihaximus/fly-pie",
+    "description": "Flysystem integration plugin for CakePHP3",
+    "type":"cakephp-plugin",
+    "license": "MIT",
+    "keywords": [
+        "flysystem",
+        "cakephp",
+        "cakephp3"
+    ],
+    "authors": [
+        {
+            "name": "Cees-Jan Kiewiet",
+            "email": "ceesjank@gmail.com",
+            "homepage": "http://wyrihaximus.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.19",
+        "cakephp/cakephp": "3.0.*-dev",
+        "league/flysystem": "~0.5"
+    },
+    "require-dev": {
+        "satooshi/php-coveralls": "~0.6",
+        "phpunit/phpunit": "~4.0",
+        "phake/phake": "1.0.*",
+        "wyrihaximus/phpunit-class-reflection-helpers": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "WyriHaximus\\FlyPie\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WyriHaximus\\Tests\\FlyPie\\": "tests/"
+        }
+    }
+}
