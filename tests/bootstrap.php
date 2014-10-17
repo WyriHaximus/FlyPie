@@ -8,7 +8,7 @@ define('PLUGIN_REPO_ROOT', dirname(__DIR__) . DS);
 Cake\Core\Plugin::load(
 	'TwigView',
 	[
-		'namespace' => 'WyriHaximus\\CakePHP\TwigView',
+		'namespace' => 'WyriHaximus\\CakePHP\FlyPie',
 		'path' => PLUGIN_REPO_ROOT . 'src' . DS,
 	]
 );
