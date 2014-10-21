@@ -4,7 +4,7 @@ return [
     'WyriHaximus' => [
         'FlyPie' => [
             'thumbnails' => [
-                'adapter' => 'S3', // The adapter to use for this filesystem
+                'adapter' => 'Local', // The adapter to use for this filesystem
 
                 'vars' => [
                     // Array with data required to build the client, no need for it when you're providing the client or factory yourself
