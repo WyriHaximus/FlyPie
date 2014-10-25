@@ -68,7 +68,14 @@ class FilesystemRegistry
 
     protected static function adapter($adapter, $vars)
     {
-        $adapter = '\\WyriHaximus\\FlyPie\\Adapter\\' . $adapter;
-        return (new $adapter())->create($vars);
+        if (!class_exists($adapter)) {
+            $adapter = '\\WyriHaximus\\FlyPie\\Adapter\\' . $adapter;
+        }
+
+        if (class_exists($adapter)) {
+            return (new $adapter())->create($vars);
+        }
+
+        throw new \InvalidArgumentException('Unknown adapter');
     }
 }
