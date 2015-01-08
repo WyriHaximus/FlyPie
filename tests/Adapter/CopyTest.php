@@ -13,6 +13,7 @@ class CopyTest extends \PHPUnit_Framework_TestCase
             'consumerSecret' => '2',
             'accessToken' => '3',
             'tokenSecret' => '4',
+            'prefix' => 'prefix',
         ]));
     }
 }
