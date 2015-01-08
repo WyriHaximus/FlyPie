@@ -28,7 +28,16 @@
         "wyrihaximus/phpunit-class-reflection-helpers": "dev-master",
         "vectorface/dunit": "~2.0",
         "squizlabs/php_codesniffer": "~1.0",
-        "object-calisthenics/phpcs-calisthenics-rules": "~1.0"
+        "object-calisthenics/phpcs-calisthenics-rules": "~1.0",
+
+        "aws/aws-sdk-php": "~2.4",
+        "predis/predis": "~1.0",
+        "dropbox/dropbox-sdk": "~1.1.1",
+        "rackspace/php-opencloud": "~1.10.0",
+        "sabre/dav": "~2.0.2",
+        "barracuda/copy": "~1.1.4",
+        "guzzlehttp/guzzle": "~4.0",
+        "phpseclib/phpseclib": "~0.3.5"
     },
     "autoload": {
         "psr-4": {
