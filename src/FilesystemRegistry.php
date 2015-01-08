@@ -10,6 +10,7 @@ use League\Flysystem\Filesystem;
 class FilesystemRegistry
 {
     const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
+    const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
 
     /**
      * Instance cache.
@@ -45,34 +46,63 @@ class FilesystemRegistry
      */
     protected static function create($alias)
     {
-        if (!Configure::check(static::CONFIGURE_KEY_PREFIX . $alias)) {
+        $aliasConfigKey = static::CONFIGURE_KEY_PREFIX . $alias;
+        if (!Configure::check($aliasConfigKey)) {
             throw new \InvalidArgumentException('Filesystem "' . $alias . '" not configured');
         }
 
-        if (
-            Configure::check(static::CONFIGURE_KEY_PREFIX . $alias . '.client') &&
-            Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.client') instanceof AdapterInterface
-        ) {
-            return Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.client');
+        if (static::existsAndInstanceOf($aliasConfigKey)) {
+            return Configure::read($aliasConfigKey . '.client');
         }
 
-        if (Configure::check(static::CONFIGURE_KEY_PREFIX . $alias . '.factory')) {
-            return static::factory(Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.factory'));
+        if (Configure::check($aliasConfigKey . '.factory')) {
+            return static::factory(Configure::read($aliasConfigKey . '.factory'));
         }
 
-        if (
-            Configure::check(static::CONFIGURE_KEY_PREFIX . $alias . '.vars') &&
-            count(Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.vars')) > 0
-        ) {
-            return static::adapter(
-                Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.adapter'),
-                Configure::read(static::CONFIGURE_KEY_PREFIX . $alias . '.vars')
-            );
+        if (self::existsAndVarsCount($aliasConfigKey)) {
+            return static::adapter(static::read($aliasConfigKey, 'adapter'), static::read($aliasConfigKey, 'vars'));
         }
 
-        throw new \InvalidArgumentException(
-            'Filesystem "' . $alias . '" has no client or factory or paramaters specifiec to build a client'
-        );
+        throw new \InvalidArgumentException(sprintf(static::INVALID_ARGUMENT_MSG, $alias));
+    }
+
+    /**
+     * Check if $aliasConfigKey exists and has the correct instance.
+     *
+     * @param string $aliasConfigKey Key to check for.
+     *
+     * @return boolean
+     */
+    protected static function existsAndInstanceOf($aliasConfigKey)
+    {
+        return Configure::check($aliasConfigKey . '.client') &&
+            Configure::read($aliasConfigKey . '.client') instanceof AdapterInterface;
+    }
+
+    /**
+     * Check if $aliasConfigKey exists and if it has vars defined.
+     *
+     * @param string $aliasConfigKey Key to check for.
+     *
+     * @return boolean
+     */
+    protected static function existsAndVarsCount($aliasConfigKey)
+    {
+        return Configure::check($aliasConfigKey . '.vars') &&
+            count(Configure::read($aliasConfigKey . '.vars')) > 0;
+    }
+
+    /**
+     * Read from Configure for given $aliasConfigKey . '.' . $field.
+     *
+     * @param string $aliasConfigKey Config alias key.
+     * @param string $field          Config field.
+     *
+     * @return mixed
+     */
+    protected static function read($aliasConfigKey, $field)
+    {
+        return Configure::read($aliasConfigKey . '.' . $field);
     }
 
     /**
@@ -84,21 +114,17 @@ class FilesystemRegistry
      */
     protected static function factory($factory)
     {
-        switch (gettype($factory)) {
-            case 'callable':
-                return $factory();
-                break;
-            case 'string':
-                if (count(EventManager::instance()->listeners($factory)) > 0) {
-                    return EventManager::instance()->dispatch($factory)->result;
-                    break;
-                }
-                // Falling through in case it's possible a function
-            case 'array':
-                if (function_exists($factory)) {
-                    return call_user_func($factory);
-                }
-                break;
+        $type = gettype($factory);
+        if ($type == 'callable') {
+            return $factory();
+        }
+
+        if ($type == 'string' && count(EventManager::instance()->listeners($factory)) > 0) {
+            return EventManager::instance()->dispatch($factory)->result;
+        }
+
+        if (($type == 'string' || $type == 'array') && function_exists($factory)) {
+            return call_user_func($factory);
         }
     }
 
