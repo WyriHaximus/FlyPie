@@ -8,6 +8,17 @@ tools:
     php_pdepend: true
     sensiolabs_security_checker: true
     php_changetracking: true
+    php_code_sniffer:
+        enabled: true
+        config:
+            tab_width: 0
+            encoding: utf8
+            ruleset: ~
+            standard: "PSR2"
+    php_cs_fixer:
+        enabled: true
+        config:
+            level: psr2
     php_mess_detector:
         enabled: true
         config:
