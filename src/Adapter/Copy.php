@@ -4,10 +4,18 @@ namespace WyriHaximus\FlyPie\Adapter;
 
 use Barracuda\Copy\API;
 use League\Flysystem\Adapter\Copy as CopyAdapter;
+use WyriHaximus\FlyPie\AdapterInterface;
 
-class Copy
+class Copy implements AdapterInterface
 {
-    public function create($vars)
+    /**
+     * Create a Copy adapter.
+     *
+     * @param array $vars Array with options.
+     *
+     * @return CopyAdapter
+     */
+    public function create(array $vars)
     {
         $client = new API($vars['consumerKey'], $vars['consumerSecret'], $vars['accessToken'], $vars['tokenSecret']);
         $prefix = null;

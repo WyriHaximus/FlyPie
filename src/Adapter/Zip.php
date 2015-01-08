@@ -3,11 +3,19 @@
 namespace WyriHaximus\FlyPie\Adapter;
 
 use League\Flysystem\Adapter\Zip as ZipAdapter;
+use WyriHaximus\FlyPie\AdapterInterface;
 use ZipArchive;
 
-class Zip
+class Zip implements AdapterInterface
 {
-    public function create($vars)
+    /**
+     * Create a Zip adapter.
+     *
+     * @param array $vars Array with options.
+     *
+     * @return ZipAdapter
+     */
+    public function create(array $vars)
     {
         $archive = null;
         if (isset($vars['archive']) && $vars['archive'] instanceof ZipArchive) {
