@@ -13,6 +13,6 @@ trait FilesystemsTrait
      */
     public function filesystem($alias)
     {
-        return FilesystemRegistry::get($alias);
+        return FilesystemRegistry::retrieve($alias);
     }
 }

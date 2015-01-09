@@ -26,7 +26,7 @@ class FilesystemRegistry
      *
      * @return AdapterInterface
      */
-    public static function get($alias)
+    public static function retrieve($alias)
     {
         if (!isset(static::$instances[$alias])) {
             static::$instances[$alias] = new Filesystem(static::create($alias));
