@@ -1,5 +1,5 @@
 all: oc phpcs dunit phpunit
-travis: oc phpcs phpunit-travis
+travis: oc phpcs phpunit-travis coveralls
 
 init:
 	if [ ! -d vendor ]; then composer install; fi;
@@ -18,3 +18,6 @@ phpunit-travis: init
 
 dunit: init
 	./vendor/bin/dunit
+
+coveralls: init
+	if [ -f ./build/logs/clover.xml ]; then ./vendor/bin/coveralls; fi
