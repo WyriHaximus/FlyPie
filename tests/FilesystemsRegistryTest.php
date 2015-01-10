@@ -7,6 +7,12 @@ use WyriHaximus\FlyPie\FilesystemRegistry;
 
 class FilesystemsRegistryTest extends \PHPUnit_Framework_TestCase
 {
+    public function setUp()
+    {
+        parent::setUp();
+        FilesystemRegistry::reset();
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */

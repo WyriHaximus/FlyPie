@@ -36,6 +36,16 @@ class FilesystemRegistry
     }
 
     /**
+     * Reset the instance array back to nothing.
+     *
+     * @return void
+     */
+    public static function reset()
+    {
+        static::$instances = [];
+    }
+
+    /**
      * Gather the information to build an adapter.
      *
      * @param string $alias The alias chosen for the adapter we want.
