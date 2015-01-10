@@ -37,7 +37,7 @@ At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't int
 
 * adapter - adapter name or full qualified class name to use for this filesystem
 * vars - associative array containing the required settings for FlyPie to build an adapter for you. (This is required in case you don't use a factory or provide the client.)
-* adapter - a prebuild client
+* client - a prebuild client
 * factory - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
 
 Check out [config/config.sample.php](config/config.sample.php) for more details.
