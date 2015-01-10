@@ -140,12 +140,13 @@ class FilesystemRegistry
      */
     protected static function adapter($adapter, array $vars)
     {
-        if (!class_exists($adapter)) {
-            $adapter = '\\League\\Flysystem\\Adapter\\' . $adapter;
-        }
-
         if (class_exists($adapter)) {
             return (new \ReflectionClass($adapter))->newInstanceArgs($vars);
+        }
+
+        $leagueAdapter = '\\League\\Flysystem\\Adapter\\' . $adapter;
+        if (class_exists($leagueAdapter)) {
+            return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
 
         throw new \InvalidArgumentException('Unknown adapter');
