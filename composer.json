@@ -47,6 +47,7 @@
     "autoload-dev": {
         "psr-4": {
             "WyriHaximus\\Tests\\FlyPie\\": "tests/"
-        }
+        },
+        "files": ["tests/functions.php"]
     }
 }

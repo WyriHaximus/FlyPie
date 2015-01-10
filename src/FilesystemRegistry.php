@@ -120,22 +120,22 @@ class FilesystemRegistry
      *
      * @param callable|string|array $factory The factory to use and build the adapter.
      *
+     * @throw \InvalidArgumentException Thrown when no suitable factory is found.
+     *
      * @return mixed
      */
     protected static function factory($factory)
     {
-        $type = gettype($factory);
-        if ($type == 'callable') {
+        if (is_callable($factory)) {
             return $factory();
         }
 
+        $type = gettype($factory);
         if ($type == 'string' && count(EventManager::instance()->listeners($factory)) > 0) {
             return EventManager::instance()->dispatch($factory)->result;
         }
 
-        if (($type == 'string' || $type == 'array') && function_exists($factory)) {
-            return call_user_func($factory);
-        }
+        throw new \InvalidArgumentException('No suitable factory found');
     }
 
     /**
