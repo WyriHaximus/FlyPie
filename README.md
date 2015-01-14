@@ -1,7 +1,7 @@
 FlyPie
 ======
 
-Lightweight [Flysystem](https://github.com/thephpleague/flysystem) wrapper plugin for CakePHP v3.x
+Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper plugin for CakePHP v3.x
 
 ## Installation ##
 
