@@ -4,7 +4,7 @@ namespace WyriHaximus\FlyPie;
 
 use Cake\Core\Configure;
 use Cake\Event\EventManager;
-use League\Flysystem\AdapterInterface as FlysystemAdapterInterface;
+use League\Flysystem\AdapterInterface;
 use League\Flysystem\Filesystem;
 
 class FilesystemRegistry
@@ -24,7 +24,7 @@ class FilesystemRegistry
      *
      * @param string $alias The alias chosen for the adapter we want.
      *
-     * @return FlysystemAdapterInterface
+     * @return AdapterInterface
      */
     public static function retrieve($alias)
     {
@@ -52,7 +52,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when no matching configuration is found.
      *
-     * @return FlysystemAdapterInterface
+     * @return AdapterInterface
      */
     protected static function create($alias)
     {
@@ -86,7 +86,7 @@ class FilesystemRegistry
     protected static function existsAndInstanceOf($aliasConfigKey)
     {
         return Configure::check($aliasConfigKey . '.client') &&
-            Configure::read($aliasConfigKey . '.client') instanceof FlysystemAdapterInterface;
+            Configure::read($aliasConfigKey . '.client') instanceof AdapterInterface;
     }
 
     /**
@@ -146,7 +146,7 @@ class FilesystemRegistry
      *
      * @throw \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
-     * @return FlysystemAdapterInterface
+     * @return AdapterInterface
      */
     protected static function adapter($adapter, array $vars)
     {
