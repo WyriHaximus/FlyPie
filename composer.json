@@ -19,7 +19,7 @@
         "php": ">=5.4.19",
         "cakephp/cakephp": "3.0.*-dev",
         "cakephp/plugin-installer": "dev-master",
-        "league/flysystem": "~0.5"
+        "league/flysystem": "1.0.0-alpha1"
     },
     "require-dev": {
         "satooshi/php-coveralls": "^0.6",
