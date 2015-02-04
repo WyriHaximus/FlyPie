@@ -11,6 +11,16 @@ To install via [Composer](http://getcomposer.org/), use the command below, it wi
 composer require wyrihaximus/fly-pie 
 ```
 
+## Bootstrap ##
+
+Add the following to your `config/bootstrap.php` to load the plugin.
+
+```php
+Plugin::load('WyriHaximus/FlyPie', [
+    'bootstrap' => true,
+]);
+```
+
 ## Configuration ##
 
 Example configuration:
