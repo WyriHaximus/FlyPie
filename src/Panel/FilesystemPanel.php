@@ -14,7 +14,7 @@ class FilesystemPanel extends DebugPanel
     public function data()
     {
         return [
-            'filesystems' => array_keys(Configure::read(CONFIGURE_KEY)),
+            'filesystems' => array_keys((array)Configure::read(self::CONFIGURE_KEY)),
         ];
     }
 }
