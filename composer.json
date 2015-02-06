@@ -22,6 +22,7 @@
         "league/flysystem": "^1.0"
     },
     "require-dev": {
+        "cakephp/debug_kit": "3.0.*@dev",
         "satooshi/php-coveralls": "^0.6",
         "phpunit/phpunit": "~4.4",
         "phake/phake": "~1.0",
