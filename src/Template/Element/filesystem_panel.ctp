@@ -1,8 +1,13 @@
-<?php $noOutput = true; ?>
+<?php
+
+use \WyriHaximus\FlyPie\Panel\FilesystemPanel;
+
+$noOutput = true;
+?>
 
 <?php if (!empty($filesystems)): ?>
     <h4>Configured filesystems</h4>
-    <p class="warning">The following list used <code><?= \WyriHaximus\FlyPie\Panel\FilesystemPanel::CONFIGURE_KEY ?></code> as filesystem list:</p>
+    <p class="warning">The following list used <code><?= FilesystemPanel::CONFIGURE_KEY ?></code> as filesystem list:</p>
     <ul class="list">
         <?php foreach ($filesystems as $filesystem): ?>
             <li><?= h($filesystem) ?></li>
