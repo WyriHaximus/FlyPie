@@ -8,7 +8,7 @@ $noOutput = true;
 <?php if (!empty($filesystems)): ?>
     <h4>Configured filesystems</h4>
     <p class="warning">The following list used <code><?= FilesystemPanel::CONFIGURE_KEY ?></code> as filesystem list:</p>
-    <ul class="list">
+    <ul class="neat-array depth-0">
         <?php foreach ($filesystems as $filesystem): ?>
             <li><?= h($filesystem) ?></li>
             <?php $noOutput = false; ?>
