@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5f8604058b1b8717d4a46427c925b8f0",
+    "hash": "a97b02f549df589edaad43c2c30033c2",
     "packages": [
         {
             "name": "aura/installer-default",
@@ -191,46 +191,6 @@
                 "framework"
             ],
             "time": "2015-02-06 08:21:46"
-        },
-        {
-            "name": "cakephp/plugin-installer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cakephp/plugin-installer.git",
-                "reference": "87cb0b70fc642f4a4ce5b6d8006392f01e8d0260"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/plugin-installer/zipball/87cb0b70fc642f4a4ce5b6d8006392f01e8d0260",
-                "reference": "87cb0b70fc642f4a4ce5b6d8006392f01e8d0260",
-                "shasum": ""
-            },
-            "require-dev": {
-                "cakephp/cakephp-codesniffer": "dev-master",
-                "composer/composer": "1.0.*@dev"
-            },
-            "type": "composer-installer",
-            "extra": {
-                "class": "Cake\\Composer\\Installer\\PluginInstaller"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cake\\Composer\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "CakePHP Community",
-                    "homepage": "http://cakephp.org"
-                }
-            ],
-            "description": "A composer installer for CakePHP 3.0+ plugins.",
-            "time": "2015-02-06 02:06:07"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -2112,7 +2072,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "cakephp/cakephp": 20,
-        "cakephp/plugin-installer": 20,
         "cakephp/debug_kit": 20
     },
     "prefer-stable": false,
