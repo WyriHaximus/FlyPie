@@ -16,9 +16,7 @@ composer require wyrihaximus/fly-pie
 Add the following to your `config/bootstrap.php` to load the plugin.
 
 ```php
-Plugin::load('WyriHaximus/FlyPie', [
-    'bootstrap' => true,
-]);
+Plugin::load('WyriHaximus/FlyPie', ['bootstrap' => true]);
 ```
 
 ## Configuration ##
