@@ -2,6 +2,8 @@
 
 namespace WyriHaximus\FlyPie;
 
+use League\Flysystem\AdapterInterface;
+
 trait FilesystemsTrait
 {
     /**
@@ -9,7 +11,7 @@ trait FilesystemsTrait
      *
      * @param string $alias Alias name requested.
      *
-     * @return mixed
+     * @return AdapterInterface
      */
     public function filesystem($alias)
     {
