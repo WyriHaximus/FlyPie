@@ -9,8 +9,15 @@ class FilesystemPanel extends DebugPanel
 {
     const CONFIGURE_KEY = 'WyriHaximus.FlyPie';
 
+    // @codingStandardsIgnoreStart
     public $plugin = 'WyriHaximus/FlyPie';
+    // @codingStandardsIgnoreEnd
 
+    /**
+     * Return all data with: All configured filesystems.
+     *
+     * @return array
+     */
     public function data()
     {
         return [
