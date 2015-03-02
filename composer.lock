@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "129bb181558eef2f16fb7c0f7b53affc71660762"
+                "reference": "acdaffc5d23079ff6393e77d86bab53c9d5baabc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/129bb181558eef2f16fb7c0f7b53affc71660762",
-                "reference": "129bb181558eef2f16fb7c0f7b53affc71660762",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/acdaffc5d23079ff6393e77d86bab53c9d5baabc",
+                "reference": "acdaffc5d23079ff6393e77d86bab53c9d5baabc",
                 "shasum": ""
             },
             "require": {
@@ -157,6 +157,7 @@
                 "cakephp/event": "self.version",
                 "cakephp/i18n": "self.version",
                 "cakephp/log": "self.version",
+                "cakephp/orm": "self.version",
                 "cakephp/utility": "self.version",
                 "cakephp/validation": "self.version"
             },
@@ -190,7 +191,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-02-06 08:21:46"
+            "time": "2015-03-02 09:11:23"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -409,12 +410,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "64a1033ccd1fc0f914a08ff083e690c72d30d3d6"
+                "reference": "ac1f6cdb8b659fb5044fb01e38817667149f822d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/64a1033ccd1fc0f914a08ff083e690c72d30d3d6",
-                "reference": "64a1033ccd1fc0f914a08ff083e690c72d30d3d6",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/ac1f6cdb8b659fb5044fb01e38817667149f822d",
+                "reference": "ac1f6cdb8b659fb5044fb01e38817667149f822d",
                 "shasum": ""
             },
             "require": {
@@ -458,7 +459,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2015-02-06 03:43:37"
+            "time": "2015-02-25 02:50:12"
         },
         {
             "name": "doctrine/instantiator",
