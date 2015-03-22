@@ -17,11 +17,11 @@
     ],
     "require": {
         "php": ">=5.4.19",
-        "cakephp/cakephp": "3.0.*-dev",
+        "cakephp/cakephp": "~3.0",
         "league/flysystem": "^1.0"
     },
     "require-dev": {
-        "cakephp/debug_kit": "3.0.*@dev",
+        "cakephp/debug_kit": "~3.0",
         "satooshi/php-coveralls": "^0.6",
         "phpunit/phpunit": "~4.4",
         "phake/phake": "~1.0",
