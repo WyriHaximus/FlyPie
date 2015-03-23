@@ -4,6 +4,7 @@ namespace WyriHaximus\FlyPie\Panel;
 
 use Cake\Core\Configure;
 use DebugKit\DebugPanel;
+use WyriHaximus\FlyPie\FilesystemRegistry;
 
 class FilesystemPanel extends DebugPanel
 {
@@ -20,8 +21,15 @@ class FilesystemPanel extends DebugPanel
      */
     public function data()
     {
-        return [
+        $data = [
             'filesystems' => array_keys((array)Configure::read(self::CONFIGURE_KEY)),
+            'instances' => [],
         ];
+
+        foreach ($data['filesystems'] as $filesystem) {
+            $data['instances'][$filesystem] = FilesystemRegistry::retrieve($filesystem);
+        }
+
+        return $data;
     }
 }
