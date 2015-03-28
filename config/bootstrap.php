@@ -21,3 +21,15 @@ if (Configure::read('debug')) {
     });
 }
 */
+
+/**
+ * DiC module registration
+ */
+/*
+Configure::write('PipingBag.modules', array_merge(
+    (array)Configure::read('PipingBag.modules'),
+    [
+        //
+    ]
+));
+*/
