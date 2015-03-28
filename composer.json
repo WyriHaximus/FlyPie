@@ -18,7 +18,8 @@
     "require": {
         "php": ">=5.4.19",
         "cakephp/cakephp": "~3.0",
-        "league/flysystem": "^1.0"
+        "league/flysystem": "^1.0",
+        "lorenzo/piping-bag": "dev-master"
     },
     "require-dev": {
         "cakephp/debug_kit": "~3.0",
