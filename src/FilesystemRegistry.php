@@ -144,7 +144,7 @@ class FilesystemRegistry
      * @param string $adapter Adapter to create.
      * @param array  $vars    Vars to pass to adapter.
      *
-     * @throw \InvalidArgumentException Thrown when the given adapter class doesn't exists.
+     * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
      * @return AdapterInterface
      */
