@@ -120,7 +120,7 @@ class FilesystemRegistry
      *
      * @param callable|string|array $factory The factory to use and build the adapter.
      *
-     * @throw \InvalidArgumentException Thrown when no suitable factory is found.
+     * @throws \InvalidArgumentException Thrown when no suitable factory is found.
      *
      * @return mixed
      */
