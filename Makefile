@@ -1,11 +1,8 @@
-all: oc phpcs dunit phpunit
+all: phpcs dunit phpunit
 travis: phpcs phpunit-travis coveralls
 
 init:
 	if [ ! -d vendor ]; then composer install; fi;
-
-oc: init
-	./vendor/bin/phpcs --standard=phpcs.xml src/
 
 phpcs: init
 	./vendor/bin/phpcs --standard=PSR2 src/
