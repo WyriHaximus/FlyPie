@@ -39,7 +39,7 @@ Example configuration:
     ],
 ```
 
-At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't interferes wth any other plugins. Secondly it's an associative array where every key is the alias for a specific plugin configuration. That is `s3_thumbnails` in our example. So when you need that filesystem somewhere in your project you can call `$this->filesystem('s3_thumbnails');` on the trait. 
+At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't interfere with any other plugins. Secondly it's an associative array where every key is the alias for a specific plugin configuration. That is `s3_thumbnails` in our example. So when you need that filesystem somewhere in your project you can call `$this->filesystem('s3_thumbnails');` on the trait. 
 
 ### Configuration keys ###
 
@@ -59,7 +59,7 @@ For example this lists all files in a `S3` bucket with thumbnails:
 $this->filesystem('s3_thumbnails')->listContents();
 ```
 
-For more details on how to use [Flysystem, check out it's General Usage section](https://github.com/thephpleague/flysystem#general-usage).
+For more details on how to use [Flysystem, check out its General Usage section](https://github.com/thephpleague/flysystem#general-usage).
 
 ## Supported Adapters ##
 
