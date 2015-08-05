@@ -18,8 +18,7 @@
     "require": {
         "php": ">=5.4.19",
         "cakephp/cakephp": "~3.0",
-        "league/flysystem": "^1.0",
-        "lorenzo/piping-bag": "dev-master"
+        "league/flysystem": "^1.0"
     },
     "require-dev": {
         "cakephp/debug_kit": "~3.0",
@@ -27,7 +26,11 @@
         "phpunit/phpunit": "~4.4",
         "phake/phake": "~1.0",
         "vectorface/dunit": "~2.0",
-        "squizlabs/php_codesniffer": "~1.5"
+        "squizlabs/php_codesniffer": "~1.5",
+        "lorenzo/piping-bag": "^1.0"
+    },
+    "suggest": {
+        "lorenzo/piping-bag": "Dependencies Injection container support"
     },
     "autoload": {
         "psr-4": {
