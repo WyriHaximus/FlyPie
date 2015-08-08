@@ -6,6 +6,12 @@ use Cake\Core\Configure;
 use Cake\Event\EventManager;
 use League\Flysystem\AdapterInterface;
 use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemInterface;
+use League\Flysystem\Plugin\EmptyDir;
+use League\Flysystem\Plugin\GetWithMetadata;
+use League\Flysystem\Plugin\ListFiles;
+use League\Flysystem\Plugin\ListPaths;
+use League\Flysystem\Plugin\ListWith;
 
 class FilesystemRegistry
 {
@@ -29,7 +35,7 @@ class FilesystemRegistry
     public static function retrieve($alias)
     {
         if (!isset(static::$instances[$alias])) {
-            static::$instances[$alias] = new Filesystem(static::create($alias));
+            static::$instances[$alias] = static::addPlugins(new Filesystem(static::create($alias)));
         }
 
         return static::$instances[$alias];
@@ -160,5 +166,24 @@ class FilesystemRegistry
         }
 
         throw new \InvalidArgumentException('Unknown adapter');
+    }
+
+    /**
+     * @param FilesystemInterface $filesystem
+     * @return FilesystemInterface
+     */
+    protected static function addPlugins(FilesystemInterface $filesystem)
+    {
+        foreach ([
+            new EmptyDir(),
+            new GetWithMetadata(),
+            new ListFiles(),
+            new ListPaths(),
+            new ListWith(),
+        ] as $plugin) {
+            $plugin->setFilesystem($filesystem);
+            $filesystem->addPlugin($plugin);
+        }
+        return $filesystem;
     }
 }
