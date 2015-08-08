@@ -165,6 +165,11 @@ class FilesystemRegistry
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
 
+        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Adapter';
+        if (class_exists($leagueAdapter)) {
+            return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
+        }
+
         throw new \InvalidArgumentException('Unknown adapter');
     }
 
