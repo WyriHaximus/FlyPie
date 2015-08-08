@@ -169,7 +169,10 @@ class FilesystemRegistry
     }
 
     /**
-     * @param FilesystemInterface $filesystem
+     * Add default plugins to filesystem
+     *
+     * @param FilesystemInterface $filesystem The filesystem.
+     *
      * @return FilesystemInterface
      */
     protected static function addPlugins(FilesystemInterface $filesystem)
