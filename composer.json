@@ -29,7 +29,7 @@
         "lorenzo/piping-bag": "^1.0"
     },
     "suggest": {
-        "lorenzo/piping-bag": "Dependencies Injection container support"
+        "lorenzo/piping-bag": "Dependencies Injection Container support"
     },
     "autoload": {
         "psr-4": {
