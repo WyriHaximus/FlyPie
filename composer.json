@@ -22,7 +22,6 @@
     },
     "require-dev": {
         "cakephp/debug_kit": "~3.0",
-        "satooshi/php-coveralls": "^0.6",
         "phpunit/phpunit": "~4.4",
         "phake/phake": "~1.0",
         "vectorface/dunit": "~2.0",
