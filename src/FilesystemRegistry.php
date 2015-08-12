@@ -105,7 +105,7 @@ class FilesystemRegistry
     protected static function existsAndVarsCount($aliasConfigKey)
     {
         return Configure::check($aliasConfigKey . '.vars') &&
-            count(Configure::read($aliasConfigKey . '.vars')) > 0;
+            is_array(Configure::read($aliasConfigKey . '.vars'));
     }
 
     /**
