@@ -9,11 +9,9 @@ class FilesystemModule extends AbstractModule
 {
     public function configure()
     {
-        foreach (Configure::read('WyriHaximus.FlyPie') as $alias => $adapter) {
-            $this->
-                bind('League\Flysystem\FilesystemInterface')->
-                annotatedWith($alias)->
-                toProvider('WyriHaximus\FlyPie\Di\FilesystemProvider');
-        }
+        $this->
+            bind('League\Flysystem\FilesystemInterface')->
+            annotatedWith('WyriHaximus\FlyPie\Di\FilesystemInject')->
+            toProvider('WyriHaximus\FlyPie\Di\FilesystemProvider');
     }
 }

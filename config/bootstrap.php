@@ -1,6 +1,7 @@
 <?php
 
 use Cake\Core\Configure;
+use Doctrine\Common\Annotations\AnnotationRegistry;
 
 // Debug kit panel
 /*
@@ -25,11 +26,18 @@ if (Configure::read('debug')) {
 /**
  * DiC module registration
  */
-/*
 Configure::write('PipingBag.modules', array_merge(
     (array)Configure::read('PipingBag.modules'),
     [
-        //
+        'WyriHaximus\FlyPie\Di\FilesystemModule',
     ]
 ));
-*/
+
+/**
+ * Doctrine annotation autoloader
+ */
+if (class_exists('Doctrine\Common\Annotations\AnnotationRegistry')) {
+    AnnotationRegistry::registerLoader(function ($class) {
+        return class_exists($class);
+    });
+}
