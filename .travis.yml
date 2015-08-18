@@ -38,13 +38,11 @@ matrix:
       env: dependencies=highest
     - php: hhvm
       env: dependencies=highest
-  allow_failures:
-    - php: 7
-    - php: hhvm
 
 ## Update composer and run the appropriate composer command
 before_script:
   - composer self-update -q
+  - composer config github-oauth.github.com ${GH_TOKEN}
   - if [ -z "$dependencies" ]; then composer install; fi;
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
