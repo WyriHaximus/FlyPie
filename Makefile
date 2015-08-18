@@ -1,11 +1,14 @@
-all: phpcs dunit phpunit
-travis: phpcs phpunit-travis
+all: phpcs phpa dunit phpunit
+travis: phpcs phpa phpunit-travis
 
 init:
 	if [ ! -d vendor ]; then composer install; fi;
 
 phpcs: init
 	./vendor/bin/phpcs --standard=PSR2 src/
+
+phpa: init
+	./vendor/bin/phpa src/
 
 phpunit: init
 	./vendor/bin/phpunit --coverage-text --coverage-html covHtml
