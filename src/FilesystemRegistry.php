@@ -30,7 +30,7 @@ class FilesystemRegistry
      *
      * @param string $alias The alias chosen for the adapter we want.
      *
-     * @return AdapterInterface
+     * @return FilesystemInterface
      */
     public static function retrieve($alias)
     {
