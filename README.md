@@ -1,13 +1,13 @@
 FlyPie
 ======
 
-Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper plugin for CakePHP v3.x
+Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper/configuration plugin for CakePHP v3.x
 
 ## Installation ##
 
 To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
 
-```
+```bash
 composer require wyrihaximus/fly-pie 
 ```
 
@@ -21,32 +21,32 @@ Plugin::load('WyriHaximus/FlyPie', ['bootstrap' => true]);
 
 ## Configuration ##
 
-Example configuration:
+Example configuration (for in `config/app.php`):
 
 ```php
-    /**
-     * FlySystem filesystems
-     */
-    'WyriHaximus' => [
-        'FlyPie' => [
-            's3_thumbnails' => [
-                'adapter' => 'Local',
-                'vars' => [
-                    'path' => __DIR__,
-                ],
+/**
+ * FlySystem filesystems
+ */
+'WyriHaximus' => [
+    'FlyPie' => [
+        's3_thumbnails' => [
+            'adapter' => 'Local',
+            'vars' => [
+                'path' => __DIR__,
             ],
         ],
     ],
+],
 ```
 
 At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't interfere with any other plugins. Secondly it's an associative array where every key is the alias for a specific plugin configuration. That is `s3_thumbnails` in our example. So when you need that filesystem somewhere in your project you can call `$this->filesystem('s3_thumbnails');` on the trait. 
 
 ### Configuration keys ###
 
-* adapter - adapter name or full qualified class name to use for this filesystem
-* vars - associative array containing the required settings for FlyPie to build an adapter for you. (This is required in case you don't use a factory or provide the client.)
-* client - a prebuild client
-* factory - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
+* `adapter` - adapter name or full qualified class name to use for this filesystem
+* `vars` - associative array containing the required settings for FlyPie to build an adapter for you. (This is required in case you don't use a factory or provide the client.)
+* `client` - a prebuild client
+* `factory` - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
 
 Check out [config/config.sample.php](config/config.sample.php) for more details.
 
