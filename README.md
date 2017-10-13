@@ -5,7 +5,7 @@ Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper/configuratio
 
 ## Installation ##
 
-To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
+To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `^`.
 
 ```bash
 composer require wyrihaximus/fly-pie 
