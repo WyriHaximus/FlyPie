@@ -32,7 +32,9 @@ Example configuration (for in `config/app.php`):
         's3_thumbnails' => [
             'adapter' => 'Local',
             'vars' => [
-                'path' => __DIR__,
+                __DIR__, // Path
+                'second option',
+                'third option',
             ],
         ],
     ],
@@ -44,11 +46,11 @@ At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't int
 ### Configuration keys ###
 
 * `adapter` - adapter name or full qualified class name to use for this filesystem
-* `vars` - associative array containing the required settings for FlyPie to build an adapter for you. (This is required in case you don't use a factory or provide the client.)
+* `vars` - array containing the required settings for FlyPie to build an adapter for you. That is passed directly into `newInstanceArgs` upon adapter creation. (This is required in case you don't use a factory or provide the client.)
 * `client` - a prebuild client
 * `factory` - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
 
-Check out [config/config.sample.php](config/config.sample.php) for more details.
+Check out [`config/config.sample.php`](config/config.sample.php) for more details.
 
 ## Usage ##
 
