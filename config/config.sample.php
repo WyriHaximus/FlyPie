@@ -30,15 +30,15 @@ return [
                     return new stdClass();
                 },
 
-                // OR
+                // Or
 
                 'factory' => [$class, 'method'], // Array call user func.
 
-                // OR
+                // Or
 
                 'factory' => 'Class::method', // String call user func, this is going to be interesting with the client from a event.
 
-                // OR
+                // Or
 
                 'factory' => 'Vendor.Plugin.Event.Name', // Retrieve the client (adapter) from the result property of an event.
             ],
