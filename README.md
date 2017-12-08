@@ -65,7 +65,9 @@ For more details on how to use [Flysystem, check out its General Usage section](
 
 ## Supported Adapters ##
 
-For all supported adapters see: [https://github.com/thephpleague/flysystem#adapters](https://github.com/thephpleague/flysystem#adapters)
+By default only a few adapters are included. Extra adapters can be added on a 
+per case basis as extra composer packages. For all supported adapters see: 
+[https://github.com/thephpleague/flysystem#adapters](https://github.com/thephpleague/flysystem#adapters)
 
 ## License ##
 
