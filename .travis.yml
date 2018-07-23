@@ -41,9 +41,8 @@ matrix:
 
 ## Update composer and run the appropriate composer command
 before_script:
-  - composer self-update -q
-  - composer config github-oauth.github.com ${GH_TOKEN}
   - if [ -z "$dependencies" ]; then composer install; fi;
+  - composer config --unset platform.php
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
   - composer show -i

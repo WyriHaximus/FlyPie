@@ -41,5 +41,11 @@
             "WyriHaximus\\Tests\\FlyPie\\": "tests/"
         },
         "files": ["tests/functions.php"]
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "5.4.19"
+        }
     }
 }
