@@ -49,6 +49,7 @@ At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't int
 * `vars` - array containing the required settings for FlyPie to build an adapter for you. That is passed directly into `newInstanceArgs` upon adapter creation. (This is required in case you don't use a factory or provide the client.)
 * `client` - a prebuild client
 * `factory` - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
+* `url` - [Data Source Name](https://book.cakephp.org/3.0/en/appendices/glossary.html#term-dsn). A connection string format that is formed like a URI. See below for examples.
 
 Check out [`config/config.sample.php`](config/config.sample.php) for more details.
 
@@ -68,6 +69,12 @@ For more details on how to use [Flysystem, check out its General Usage section](
 By default only a few adapters are included. Extra adapters can be added on a 
 per case basis as extra composer packages. For all supported adapters see: 
 [https://github.com/thephpleague/flysystem#adapters](https://github.com/thephpleague/flysystem#adapters)
+
+## Example Data Source Names ##
+
+| Adapter      | Data Source Name                                                           |
+| ------------ | -------------------------------------------------------------------------- |
+| AwsS3Adapter | 's3://key:secret@bucket/path?region={{region}}&version={{latest|version}}' |
 
 ## License ##
 

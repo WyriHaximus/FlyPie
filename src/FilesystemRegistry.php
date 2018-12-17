@@ -3,6 +3,7 @@
 namespace WyriHaximus\FlyPie;
 
 use Cake\Core\Configure;
+use Cake\Core\StaticConfigTrait;
 use Cake\Event\EventManager;
 use League\Flysystem\AdapterInterface;
 use League\Flysystem\Filesystem;
@@ -15,8 +16,19 @@ use League\Flysystem\Plugin\ListWith;
 
 class FilesystemRegistry
 {
+    use StaticConfigTrait;
+
     const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
     const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
+
+    /**
+     * An array mapping url schemes to fully qualified driver class names
+     *
+     * @return array
+     */
+    protected static $_dsnClassMap = [
+        's3' => 'League\Flysystem\AwsS3v3\AwsS3Adapter',
+    ];
 
     /**
      * Instance cache.
@@ -79,6 +91,10 @@ class FilesystemRegistry
             return static::adapter(static::read($aliasConfigKey, 'adapter'), static::read($aliasConfigKey, 'vars'));
         }
 
+        if(self::existsWithDsn($aliasConfigKey)) {
+            return static::adapterFromDsn(Configure::read($aliasConfigKey. '.url'));
+        }
+
         throw new \InvalidArgumentException(sprintf(static::INVALID_ARGUMENT_MSG, $alias));
     }
 
@@ -106,6 +122,19 @@ class FilesystemRegistry
     {
         return Configure::check($aliasConfigKey . '.vars') &&
             is_array(Configure::read($aliasConfigKey . '.vars'));
+    }
+
+    /**
+     * Check if $aliasConfigKey exists and if it has url defined.
+     *
+     * @param string $aliasConfigKey Key to check for.
+     *
+     * @return boolean
+     */
+    protected static function existsWithDsn($aliasConfigKey)
+    {
+        return Configure::check($aliasConfigKey . '.url') &&
+            !empty(Configure::read($aliasConfigKey . '.url'));
     }
 
     /**
@@ -171,6 +200,36 @@ class FilesystemRegistry
         }
 
         throw new \InvalidArgumentException('Unknown adapter');
+    }
+
+    /**
+     * Parse dsn, map configuration and instantiate adapter.
+     *
+     * @param string $dsn Data Source Name to parse and map.
+     * 
+     * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
+     *
+     * @return AdapterInterface
+     */
+    protected static function adapterFromDsn(string $dsn){
+        $vars = static::parseDsn($dsn);
+
+        if(class_exists($vars['className'])){
+            throw new \InvalidArgumentException('Unknown adapter');
+        }
+
+        if($vars['className'] == 'League\Flysystem\AwsS3v3\AwsS3v3Adapter'){
+            $client = (new \ReflectionClass('Aws\S3\S3Client'))->newInstanceArgs([
+                'credentials' => [
+                    'key' => $vars['username'],
+                    'secret' => $vars['password'],
+                ],
+                'region' => $vars['region'],
+                'version' => $vars['version'],
+            ]);
+
+            return static::adapter($vars['className'], [$client, $vars['host'], $vars['path']]);
+        }
     }
 
     /**
