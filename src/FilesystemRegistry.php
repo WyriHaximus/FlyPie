@@ -27,7 +27,7 @@ class FilesystemRegistry
      * @return array
      */
     protected static $_dsnClassMap = [
-        's3' => 'League\Flysystem\AwsS3v3\AwsS3Adapter',
+        's3' => 'League\Flysystem\AwsS3v3\AwsS3v3Adapter',
     ];
 
     /**
