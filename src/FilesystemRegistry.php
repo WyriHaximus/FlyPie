@@ -91,7 +91,7 @@ class FilesystemRegistry
             return static::adapter(static::read($aliasConfigKey, 'adapter'), static::read($aliasConfigKey, 'vars'));
         }
 
-        if(self::existsWithDsn($aliasConfigKey)) {
+        if (self::existsWithDsn($aliasConfigKey)) {
             return static::adapterFromDsn(Configure::read($aliasConfigKey. '.url'));
         }
 
@@ -206,19 +206,20 @@ class FilesystemRegistry
      * Parse dsn, map configuration and instantiate adapter.
      *
      * @param string $dsn Data Source Name to parse and map.
-     * 
+     *
      * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
      * @return AdapterInterface
      */
-    protected static function adapterFromDsn(string $dsn){
+    protected static function adapterFromDsn(string $dsn)
+    {
         $vars = static::parseDsn($dsn);
 
-        if(class_exists($vars['className'])){
+        if (class_exists($vars['className'])) {
             throw new \InvalidArgumentException('Unknown adapter');
         }
 
-        if($vars['className'] == 'League\Flysystem\AwsS3v3\AwsS3v3Adapter'){
+        if ($vars['className'] == 'League\Flysystem\AwsS3v3\AwsS3v3Adapter') {
             $client = (new \ReflectionClass('Aws\S3\S3Client'))->newInstanceArgs([
                 'credentials' => [
                     'key' => $vars['username'],
