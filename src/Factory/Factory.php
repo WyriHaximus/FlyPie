@@ -8,7 +8,7 @@ class AwsS3AdapterFactory
 {
     /**
      * Return new Adapter
-     * 
+     *
      * @param array $config list of options parsed from dsn
      *
      * @return \League\Flysystem\AdapterInterface|bool
