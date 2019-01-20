@@ -27,7 +27,7 @@ class FilesystemRegistry
      * @return array
      */
     protected static $_dsnClassMap = [
-        's3' => 'League\Flysystem\AwsS3v3\AwsS3v3Adapter',
+        's3' => 'WyriHaximus\FlyPie\Factory\AwsS3v3AdapterFactory',
     ];
 
     /**
@@ -215,22 +215,11 @@ class FilesystemRegistry
     {
         $vars = static::parseDsn($dsn);
 
-        if (class_exists($vars['className'])) {
+        if (!class_exists($vars['className'])) {
             throw new \InvalidArgumentException('Unknown adapter');
         }
 
-        if ($vars['className'] == 'League\Flysystem\AwsS3v3\AwsS3v3Adapter') {
-            $client = (new \ReflectionClass('Aws\S3\S3Client'))->newInstanceArgs([
-                'credentials' => [
-                    'key' => $vars['username'],
-                    'secret' => $vars['password'],
-                ],
-                'region' => $vars['region'],
-                'version' => $vars['version'],
-            ]);
-
-            return static::adapter($vars['className'], [$client, $vars['host'], $vars['path']]);
-        }
+        return $vars['className']::client($vars);
     }
 
     /**
