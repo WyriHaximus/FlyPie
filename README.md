@@ -72,9 +72,9 @@ per case basis as extra composer packages. For all supported adapters see:
 
 ## Example Data Source Names ##
 
-| Adapter        | Data Source Name                                                           |
-| -------------- | -------------------------------------------------------------------------- |
-| AwsS3v3Adapter | `s3://key:secret@bucket/path?region={{region}}&version={{latest|version}}` |
+| Adapter        | Data Source Name                                                         |
+| -------------- | ------------------------------------------------------------------------ |
+| AwsS3v3Adapter | s3://key:secret@bucket/path?region={{region}}&version={{latest|version}} |
 
 ## License ##
 
