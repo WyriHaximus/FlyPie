@@ -27,7 +27,7 @@ class FilesystemRegistry
      * @return array
      */
     protected static $_dsnClassMap = [
-        's3' => 'WyriHaximus\FlyPie\Factory\AwsS3v3AdapterFactory',
+        's3' => 'WyriHaximus\FlyPie\Factory\AwsS3AdapterFactory',
     ];
 
     /**
