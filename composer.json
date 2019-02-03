@@ -1,7 +1,7 @@
 {
     "name": "wyrihaximus/fly-pie",
     "description": "Flysystem integration plugin for CakePHP3",
-    "type":"cakephp-plugin",
+    "type": "cakephp-plugin",
     "license": "MIT",
     "keywords": [
         "flysystem",
@@ -40,7 +40,9 @@
         "psr-4": {
             "WyriHaximus\\Tests\\FlyPie\\": "tests/"
         },
-        "files": ["tests/functions.php"]
+        "files": [
+            "tests/functions.php"
+        ]
     },
     "config": {
         "sort-packages": true,
