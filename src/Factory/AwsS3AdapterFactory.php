@@ -15,6 +15,10 @@ class AwsS3AdapterFactory
      */
     public static function client($config)
     {
+        $defaults = [
+            'path' => ''
+        ];
+        $config += $defaults;
         $client = new S3Client([
             'credentials' => [
                 'key' => $config['username'],
