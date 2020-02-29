@@ -19,7 +19,7 @@ class FilesystemsRegistryTest extends TestCase
         FilesystemRegistry::reset();
         $this->callbackFired = false;
         $GLOBALS['THIS_callbackFiredStatic'] = false;
-        $GLOBALS['THIS'] = $this;
+        $GLOBALS['THIS'] = $this->createMock('League\Flysystem\AdapterInterface');
     }
 
     public function tearDown(): void
@@ -69,13 +69,13 @@ class FilesystemsRegistryTest extends TestCase
     public function testRetrieveFactoryStringArray()
     {
         Configure::write('WyriHaximus.FlyPie.existing', [
-            'factory' => [$this, 'testRetrieveFactoryStringArray_checker'],
+            'factory' => [$this, 'retrieveFactoryStringArray_checker'],
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
         $this->assertTrue($this->callbackFired);
     }
 
-    public function testRetrieveFactoryStringArray_checker()
+    public function retrieveFactoryStringArray_checker()
     {
         $this->callbackFired = true;
         return $this->createMock('League\Flysystem\AdapterInterface');
@@ -97,13 +97,13 @@ class FilesystemsRegistryTest extends TestCase
             $callbackFired = true;
             return $this->createMock('League\Flysystem\AdapterInterface');
         };
-        EventManager::instance()->attach($callback, 'WyriHaximus.Tests.FlyPie.existing');
+        EventManager::instance()->on('WyriHaximus.Tests.FlyPie.existing', [], $callback);
         Configure::write('WyriHaximus.FlyPie.existing', [
             'factory' => 'WyriHaximus.Tests.FlyPie.existing',
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
         $this->assertTrue($callbackFired);
-        EventManager::instance()->detach($callback, 'WyriHaximus.Tests.FlyPie.existing');
+        EventManager::instance()->off('WyriHaximus.Tests.FlyPie.existing', $callback);
     }
 
     public function testRetrieveFactoryFail()

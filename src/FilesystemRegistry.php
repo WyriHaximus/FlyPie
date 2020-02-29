@@ -169,7 +169,7 @@ class FilesystemRegistry
 
         $type = gettype($factory);
         if ($type == 'string' && count(EventManager::instance()->listeners($factory)) > 0) {
-            return EventManager::instance()->dispatch($factory)->result;
+            return EventManager::instance()->dispatch($factory)->getResult();
         }
 
         throw new \InvalidArgumentException('No suitable factory found');
