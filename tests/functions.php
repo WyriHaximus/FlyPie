@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\Tests\FlyPie;
 
-function testRetrieveFactoryStringStatic_checker()
+function retrieveFactoryStringStaticChecker()
 {
     $GLOBALS['THIS_callbackFiredStatic'] = true;
     return $GLOBALS['THIS'];

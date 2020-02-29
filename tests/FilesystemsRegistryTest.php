@@ -69,13 +69,13 @@ class FilesystemsRegistryTest extends TestCase
     public function testRetrieveFactoryStringArray()
     {
         Configure::write('WyriHaximus.FlyPie.existing', [
-            'factory' => [$this, 'retrieveFactoryStringArray_checker'],
+            'factory' => [$this, 'retrieveFactoryStringArrayChecker'],
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
         $this->assertTrue($this->callbackFired);
     }
 
-    public function retrieveFactoryStringArray_checker()
+    public function retrieveFactoryStringArrayChecker()
     {
         $this->callbackFired = true;
         return $this->createMock('League\Flysystem\AdapterInterface');
@@ -84,7 +84,7 @@ class FilesystemsRegistryTest extends TestCase
     public function testRetrieveFactoryStringStatic()
     {
         Configure::write('WyriHaximus.FlyPie.existing', [
-            'factory' => 'WyriHaximus\Tests\FlyPie\testRetrieveFactoryStringStatic_checker',
+            'factory' => 'WyriHaximus\Tests\FlyPie\retrieveFactoryStringStaticChecker',
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
         $this->assertTrue($GLOBALS['THIS_callbackFiredStatic']);
