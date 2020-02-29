@@ -1,4 +1,5 @@
 <?php
+
 namespace WyriHaximus\FlyPie\Factory;
 
 use Aws\S3\S3Client;
@@ -16,7 +17,7 @@ class AwsS3AdapterFactory
     public static function client($config)
     {
         $defaults = [
-            'path' => ''
+            'path' => '',
         ];
         $config += $defaults;
         $client = new S3Client([

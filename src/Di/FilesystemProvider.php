@@ -11,7 +11,7 @@ class FilesystemProvider implements ProviderInterface
     use FilesystemsTrait;
 
     /**
-     * @var InjectionPointInterface
+     * @var \Ray\Di\InjectionPointInterface
      */
     private $ip;
 

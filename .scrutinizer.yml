@@ -23,7 +23,7 @@ tools:
     php_mess_detector:
         enabled: true
         config:
-            ruleset:              ~
+            ruleset: ~
             code_size_rules:
                 cyclomatic_complexity: true
                 npath_complexity: true

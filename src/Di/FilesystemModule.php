@@ -2,7 +2,6 @@
 
 namespace WyriHaximus\FlyPie\Di;
 
-use Cake\Core\Configure;
 use Ray\Di\AbstractModule;
 
 class FilesystemModule extends AbstractModule

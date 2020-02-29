@@ -26,9 +26,11 @@ class FilesystemRegistry
      *
      * @return array
      */
+    // @codingStandardsIgnoreStart
     protected static $_dsnClassMap = [
         's3' => 'WyriHaximus\FlyPie\Factory\AwsS3AdapterFactory',
     ];
+    // @codingStandardsIgnoreEnd
 
     /**
      * Instance cache.
@@ -42,7 +44,7 @@ class FilesystemRegistry
      *
      * @param string $alias The alias chosen for the adapter we want.
      *
-     * @return FilesystemInterface
+     * @return \League\Flysystem\FilesystemInterface
      */
     public static function retrieve($alias)
     {
@@ -70,7 +72,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when no matching configuration is found.
      *
-     * @return AdapterInterface
+     * @return \League\Flysystem\AdapterInterface
      */
     protected static function create($alias)
     {
@@ -92,7 +94,7 @@ class FilesystemRegistry
         }
 
         if (self::existsWithDsn($aliasConfigKey)) {
-            return static::adapterFromDsn(Configure::read($aliasConfigKey. '.url'));
+            return static::adapterFromDsn(Configure::read($aliasConfigKey . '.url'));
         }
 
         throw new \InvalidArgumentException(sprintf(static::INVALID_ARGUMENT_MSG, $alias));
@@ -103,7 +105,7 @@ class FilesystemRegistry
      *
      * @param string $aliasConfigKey Key to check for.
      *
-     * @return boolean
+     * @return bool
      */
     protected static function existsAndInstanceOf($aliasConfigKey)
     {
@@ -116,7 +118,7 @@ class FilesystemRegistry
      *
      * @param string $aliasConfigKey Key to check for.
      *
-     * @return boolean
+     * @return bool
      */
     protected static function existsAndVarsCount($aliasConfigKey)
     {
@@ -129,7 +131,7 @@ class FilesystemRegistry
      *
      * @param string $aliasConfigKey Key to check for.
      *
-     * @return boolean
+     * @return bool
      */
     protected static function existsWithDsn($aliasConfigKey)
     {
@@ -181,7 +183,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
-     * @return AdapterInterface
+     * @return \League\Flysystem\AdapterInterface
      */
     protected static function adapter($adapter, array $vars)
     {
@@ -209,7 +211,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
-     * @return AdapterInterface
+     * @return \League\Flysystem\AdapterInterface
      */
     protected static function adapterFromDsn(string $dsn)
     {
@@ -225,9 +227,9 @@ class FilesystemRegistry
     /**
      * Add default plugins to filesystem
      *
-     * @param FilesystemInterface $filesystem The filesystem.
+     * @param \League\Flysystem\FilesystemInterface $filesystem The filesystem.
      *
-     * @return FilesystemInterface
+     * @return \League\Flysystem\FilesystemInterface
      */
     protected static function addPlugins(FilesystemInterface $filesystem)
     {
@@ -241,6 +243,7 @@ class FilesystemRegistry
             $plugin->setFilesystem($filesystem);
             $filesystem->addPlugin($plugin);
         }
+
         return $filesystem;
     }
 }

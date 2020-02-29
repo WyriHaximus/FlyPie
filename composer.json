@@ -1,12 +1,11 @@
 {
     "name": "wyrihaximus/fly-pie",
-    "description": "Flysystem integration plugin for CakePHP3",
+    "description": "Flysystem integration plugin for CakePHP 4",
     "type": "cakephp-plugin",
     "license": "MIT",
     "keywords": [
         "flysystem",
-        "cakephp",
-        "cakephp3"
+        "cakephp"
     ],
     "authors": [
         {
@@ -16,20 +15,16 @@
         }
     ],
     "require": {
-        "php": ">=5.4.19",
-        "cakephp/cakephp": "^3.0 || ^4.0",
+        "php": ">=7.2",
+        "cakephp/cakephp": "^4.0",
         "league/flysystem": "^1.0"
     },
     "require-dev": {
-        "cakephp/debug_kit": "^3.0 || ^4.0",
-        "phpunit/phpunit": "~4.4",
-        "phake/phake": "~1.0",
-        "vectorface/dunit": "~2.0",
-        "squizlabs/php_codesniffer": "~1.5.6",
+        "cakephp/debug_kit": "^4.0",
+        "phpunit/phpunit": "~8.5.0",
+        "phake/phake": "3.*",
+        "cakephp/cakephp-codesniffer": "^4.0",
         "lorenzo/piping-bag": "^1.0"
-    },
-    "suggest": {
-        "lorenzo/piping-bag": "Dependencies Injection Container support"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +42,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "5.4.19"
+            "php": "7.2"
         }
     }
 }
