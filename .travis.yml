@@ -39,10 +39,10 @@ before_script:
   - composer show -i
 
 ## Run the actual test
-script: make travis
+script: composer travis
 
 ## Send coverage report to scrutinizer
-after_script: make travis-coverage
+after_script: composer travis-coverage
 
 notifications:
   webhooks:

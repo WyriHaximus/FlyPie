@@ -39,6 +39,20 @@
             "tests/functions.php"
         ]
     },
+    "scripts": {
+        "all": [
+            "@phpcs",
+            "@phpunit"
+        ],
+        "travis": [
+            "@phpcs",
+            "@phpunit-travis"
+        ],
+        "phpcs": "phpcs",
+        "phpunit": "phpunit --coverage-text --coverage-html covHtml",
+        "phpunit-travis": "phpunit --coverage-text --coverage-clover ./build/logs/clover.xml",
+        "travis-coverage": "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+    },
     "config": {
         "sort-packages": true,
         "platform": {
