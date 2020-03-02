@@ -3,11 +3,12 @@
 namespace WyriHaximus\Tests\FlyPie;
 
 use Cake\Core\Configure;
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\FlyPie\FilesystemRegistry;
 
-final class FunctionalTest extends \PHPUnit_Framework_TestCase
+final class FunctionalTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         FilesystemRegistry::reset();

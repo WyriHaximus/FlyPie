@@ -11,7 +11,7 @@ class FilesystemProvider implements ProviderInterface
     use FilesystemsTrait;
 
     /**
-     * @var InjectionPointInterface
+     * @var \Ray\Di\InjectionPointInterface
      */
     private $ip;
 
@@ -21,7 +21,7 @@ class FilesystemProvider implements ProviderInterface
     }
 
     /**
-     * @return \League\Flysystem\AdapterInterface
+     * @return \League\Flysystem\FilesystemInterface
      * @throws \Exception
      */
     public function get()

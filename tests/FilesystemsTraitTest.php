@@ -2,13 +2,14 @@
 
 namespace WyriHaximus\Tests\FlyPie;
 
-class FilesystemsTraitTest extends \PHPUnit_Framework_TestCase
+use InvalidArgumentException;
+use PHPUnit\Framework\TestCase;
+
+class FilesystemsTraitTest extends TestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testFilesystem()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->getMockForTrait('WyriHaximus\FlyPie\FilesystemsTrait')->filesystem('nonexisting');
     }
 }

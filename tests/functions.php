@@ -2,8 +2,8 @@
 
 namespace WyriHaximus\Tests\FlyPie;
 
-function testRetrieveFactoryStringStatic_checker()
+function retrieveFactoryStringStaticChecker()
 {
     $GLOBALS['THIS_callbackFiredStatic'] = true;
-    return $GLOBALS['THIS']->getMock('League\Flysystem\AdapterInterface');
+    return $GLOBALS['THIS'];
 }

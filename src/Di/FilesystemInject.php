@@ -3,7 +3,6 @@
 namespace WyriHaximus\FlyPie\Di;
 
 use Ray\Di\Di\InjectInterface;
-use Ray\Di\Di\Qualifier;
 
 /**
  * @Annotation

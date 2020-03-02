@@ -8,35 +8,26 @@ cache:
     - $HOME/.composer/cache
 
 ## PHP versions we test against
+dist: bionic
 php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7
-  - hhvm
+  - 7.2
+  - 7.3
+  - 7.4
 
 ## Build matrix for lowest and highest possible targets
 matrix:
   include:
-    - php: 5.4
+    - php: 7.2
       env: dependencies=lowest
-    - php: 5.5
+    - php: 7.3
       env: dependencies=lowest
-    - php: 5.6
+    - php: 7.4
       env: dependencies=lowest
-    - php: 7
-      env: dependencies=lowest
-    - php: hhvm
-      env: dependencies=lowest
-    - php: 5.4
+    - php: 7.2
       env: dependencies=highest
-    - php: 5.5
+    - php: 7.3
       env: dependencies=highest
-    - php: 5.6
-      env: dependencies=highest
-    - php: 7
-      env: dependencies=highest
-    - php: hhvm
+    - php: 7.4
       env: dependencies=highest
 
 ## Update composer and run the appropriate composer command
@@ -48,10 +39,10 @@ before_script:
   - composer show -i
 
 ## Run the actual test
-script: make travis
+script: composer travis
 
 ## Send coverage report to scrutinizer
-after_script: make travis-coverage
+after_script: composer travis-coverage
 
 notifications:
   webhooks:
