@@ -1,7 +1,9 @@
 FlyPie
 ======
 
-Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper/configuration plugin for CakePHP v3.x
+Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper/configuration plugin for CakePHP.
+
+See below for CakePHP core version compatibility matrix.
 
 ## Installation ##
 
@@ -21,7 +23,7 @@ Plugin::load('WyriHaximus/FlyPie', ['bootstrap' => true]);
 
 ## Configuration ##
 
-Example configuration (for in `config/app.php`):
+Example configuration (for in `config/app_local.php`):
 
 ```php
 /**
@@ -43,13 +45,21 @@ Example configuration (for in `config/app.php`):
 
 At first it's namespaced within `WyriHaximus.FlyPie` to make sure it doesn't interfere with any other plugins. Secondly it's an associative array where every key is the alias for a specific plugin configuration. That is `s3_thumbnails` in our example. So when you need that filesystem somewhere in your project you can call `$this->filesystem('s3_thumbnails');` on the trait. 
 
+To enable the filesystem panel in DebugKit add the configuration as shown below:
+
+```php
+'DebugKit' => [
+    'panels' => ['WyriHaximus/FlyPie.Filesystem'],
+],
+```
+
 ### Configuration keys ###
 
 * `adapter` - adapter name or full qualified class name to use for this filesystem
 * `vars` - array containing the required settings for FlyPie to build an adapter for you. That is passed directly into `newInstanceArgs` upon adapter creation. (This is required in case you don't use a factory or provide the client.)
 * `client` - a prebuild client
 * `factory` - a callback, array (class instance, methodname), string (static class method or function name or event name) that can be utilized as a factory to build the adapter
-* `url` - [Data Source Name](https://book.cakephp.org/3.0/en/appendices/glossary.html#term-dsn). A connection string format that is formed like a URI. See below for examples.
+* `url` - [Data Source Name](https://book.cakephp.org/4/en/appendices/glossary.html#term-dsn). A connection string format that is formed like a URI. See below for examples.
 
 Check out [`config/config.sample.php`](config/config.sample.php) for more details.
 
@@ -75,6 +85,13 @@ per case basis as extra composer packages. For all supported adapters see:
 | Adapter        | Data Source Name                                                            |
 | -------------- | --------------------------------------------------------------------------- |
 | AwsS3v3Adapter | `s3://key:secret@bucket/path?region={{region}}&version={{latest\|version}}` |
+
+## CakePHP version compatibility matrix ##
+
+| FlyPie | CakePHP core | PHP min |
+| ------ | ------------ | ------- |
+| 1.x    | 3.x          | PHP 5.4 |
+| 2.x    | 4.x          | PHP 7.2 |
 
 ## License ##
 
