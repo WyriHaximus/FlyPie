@@ -23,11 +23,12 @@ class FilesystemPanel extends DebugPanel
     {
         $data = [
             'filesystems' => array_keys((array)Configure::read(self::CONFIGURE_KEY)),
-            'instances' => [],
+            'classes' => [],
         ];
 
         foreach ($data['filesystems'] as $filesystem) {
-            $data['instances'][$filesystem] = FilesystemRegistry::retrieve($filesystem);
+            $instance = FilesystemRegistry::retrieve($filesystem);
+            $data['classes'][$filesystem] = get_class($instance->getAdapter());
         }
 
         return $data;
