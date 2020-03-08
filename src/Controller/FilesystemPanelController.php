@@ -4,7 +4,7 @@ namespace WyriHaximus\FlyPie\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
-use Cake\Event\Event;
+use Cake\Event\EventInterface;
 use Cake\Http\Exception\NotFoundException;
 use WyriHaximus\FlyPie\FilesystemsTrait;
 
@@ -19,13 +19,13 @@ class FilesystemPanelController extends Controller
     /**
      * Before filter handler.
      *
-     * @param \Cake\Event\Event $event The event.
+     * @param \Cake\Event\EventInterface $event The event.
      *
      * @return void
      *
      * @throws \Cake\Http\Exception\NotFoundException Throw no found when debug is disabled.
      */
-    public function beforeFilter(Event $event)
+    public function beforeFilter(EventInterface $event)
     {
         // TODO add config override.
         if (!Configure::read('debug')) {

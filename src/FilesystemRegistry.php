@@ -15,16 +15,23 @@ class FilesystemRegistry
     const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
     const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
 
+    // @codingStandardsIgnoreStart
     /**
      * An array mapping url schemes to fully qualified driver class names
      *
-     * @return array
+     * @var array
      */
-    // @codingStandardsIgnoreStart
     protected static $_dsnClassMap = [
         's3' => 'WyriHaximus\FlyPie\Factory\AwsS3AdapterFactory',
     ];
     // @codingStandardsIgnoreEnd
+
+    /**
+     * Adapter class cache.
+     *
+     * @var array
+     */
+    public static $adapterClasses = [];
 
     /**
      * Instance cache.
@@ -43,7 +50,9 @@ class FilesystemRegistry
     public static function retrieve($alias)
     {
         if (!isset(static::$instances[$alias])) {
-            static::$instances[$alias] = new Filesystem(static::create($alias));
+            $adapter = static::create($alias);
+            static::$adapterClasses[$alias] = get_class($adapter);
+            static::$instances[$alias] = new Filesystem($adapter);
         }
 
         return static::$instances[$alias];

@@ -28,7 +28,7 @@ class FilesystemPanel extends DebugPanel
 
         foreach ($data['filesystems'] as $filesystem) {
             $instance = FilesystemRegistry::retrieve($filesystem);
-            $data['classes'][$filesystem] = get_class($instance->getAdapter());
+            $data['classes'][$filesystem] = FilesystemRegistry::$adapterClasses[$filesystem];
         }
 
         return $data;
