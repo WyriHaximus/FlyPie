@@ -22,7 +22,7 @@ final class FunctionalTest extends TestCase
                 __DIR__,
             ],
         ]);
-        $contents = FilesystemRegistry::retrieve('tests')->listContents();
+        $contents = FilesystemRegistry::retrieve('tests')->listContents('');
         $this->assertSame([
             'bootstrap.php',
             'FilesystemsRegistryTest.php',
@@ -31,6 +31,6 @@ final class FunctionalTest extends TestCase
             'functions.php',
         ], array_map(function ($file) {
             return $file['path'];
-        }, $contents));
+        }, iterator_to_array($contents)));
     }
 }

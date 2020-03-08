@@ -5,14 +5,8 @@ namespace WyriHaximus\FlyPie;
 use Cake\Core\Configure;
 use Cake\Core\StaticConfigTrait;
 use Cake\Event\EventManager;
-use League\Flysystem\AdapterInterface;
 use League\Flysystem\Filesystem;
-use League\Flysystem\FilesystemInterface;
-use League\Flysystem\Plugin\EmptyDir;
-use League\Flysystem\Plugin\GetWithMetadata;
-use League\Flysystem\Plugin\ListFiles;
-use League\Flysystem\Plugin\ListPaths;
-use League\Flysystem\Plugin\ListWith;
+use League\Flysystem\FilesystemAdapter;
 
 class FilesystemRegistry
 {
@@ -44,12 +38,12 @@ class FilesystemRegistry
      *
      * @param string $alias The alias chosen for the adapter we want.
      *
-     * @return \League\Flysystem\FilesystemInterface
+     * @return \League\Flysystem\Filesystem
      */
     public static function retrieve($alias)
     {
         if (!isset(static::$instances[$alias])) {
-            static::$instances[$alias] = static::addPlugins(new Filesystem(static::create($alias)));
+            static::$instances[$alias] = new Filesystem(static::create($alias));
         }
 
         return static::$instances[$alias];
@@ -72,7 +66,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when no matching configuration is found.
      *
-     * @return \League\Flysystem\AdapterInterface
+     * @return \League\Flysystem\FilesystemAdapter
      */
     protected static function create($alias)
     {
@@ -110,7 +104,7 @@ class FilesystemRegistry
     protected static function existsAndInstanceOf($aliasConfigKey)
     {
         return Configure::check($aliasConfigKey . '.client') &&
-            Configure::read($aliasConfigKey . '.client') instanceof AdapterInterface;
+            Configure::read($aliasConfigKey . '.client') instanceof FilesystemAdapter;
     }
 
     /**
@@ -183,7 +177,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
-     * @return \League\Flysystem\AdapterInterface
+     * @return \League\Flysystem\FilesystemAdapter
      */
     protected static function adapter($adapter, array $vars)
     {
@@ -191,12 +185,17 @@ class FilesystemRegistry
             return (new \ReflectionClass($adapter))->newInstanceArgs($vars);
         }
 
-        $leagueAdapter = '\\League\\Flysystem\\Adapter\\' . $adapter;
+        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Adapter';
         if (class_exists($leagueAdapter)) {
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
 
-        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Adapter';
+        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Filesystem';
+        if (class_exists($leagueAdapter)) {
+            return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
+        }
+
+        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'FilesystemAdapter';
         if (class_exists($leagueAdapter)) {
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
@@ -211,7 +210,7 @@ class FilesystemRegistry
      *
      * @throws \InvalidArgumentException Thrown when the given adapter class doesn't exists.
      *
-     * @return \League\Flysystem\AdapterInterface
+     * @return \League\Flysystem\FilesystemAdapter
      */
     protected static function adapterFromDsn(string $dsn)
     {
@@ -222,28 +221,5 @@ class FilesystemRegistry
         }
 
         return $vars['className']::client($vars);
-    }
-
-    /**
-     * Add default plugins to filesystem
-     *
-     * @param \League\Flysystem\FilesystemInterface $filesystem The filesystem.
-     *
-     * @return \League\Flysystem\FilesystemInterface
-     */
-    protected static function addPlugins(FilesystemInterface $filesystem)
-    {
-        foreach ([
-            new EmptyDir(),
-            new GetWithMetadata(),
-            new ListFiles(),
-            new ListPaths(),
-            new ListWith(),
-        ] as $plugin) {
-            $plugin->setFilesystem($filesystem);
-            $filesystem->addPlugin($plugin);
-        }
-
-        return $filesystem;
     }
 }
