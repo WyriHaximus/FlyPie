@@ -27,10 +27,20 @@ class FilesystemPanel extends DebugPanel
         ];
 
         foreach ($data['filesystems'] as $filesystem) {
-            $instance = FilesystemRegistry::retrieve($filesystem);
+            FilesystemRegistry::retrieve($filesystem);
             $data['classes'][$filesystem] = FilesystemRegistry::$adapterClasses[$filesystem];
         }
 
         return $data;
+    }
+
+    /**
+     * Gets the initial text for the filesystem summary
+     *
+     * @return string
+     */
+    public function summary()
+    {
+        return strval(count((array)Configure::read(self::CONFIGURE_KEY)));
     }
 }

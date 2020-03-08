@@ -21,12 +21,9 @@ class AwsS3AdapterFactory
         ];
         $config += $defaults;
         $client = new S3Client([
-            'credentials' => [
-                'key' => $config['username'],
-                'secret' => $config['password'],
-            ],
+            'accessKeyId' => $config['username'],
+            'accessKeySecret' => $config['password'],
             'region' => $config['region'],
-            'version' => $config['version'],
         ]);
 
         return new S3FilesystemV2($client, $config['host'], $config['path']);
