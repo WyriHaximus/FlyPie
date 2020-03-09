@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0605d7ef38d7b7516727d4b37ec18bec",
+    "content-hash": "88e81a9376dd6b6c3cbab16aa2dee798",
     "packages": [
         {
             "name": "aura/intl",
@@ -459,17 +459,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "86ca64431bd2259514a8f957f95bf1f74a896d1d"
+                "reference": "450143c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/86ca64431bd2259514a8f957f95bf1f74a896d1d",
-                "reference": "86ca64431bd2259514a8f957f95bf1f74a896d1d",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/450143c",
+                "reference": "450143c",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "league/mime-type-detection": "dev-master",
+                "league/mime-type-detection": "^1.0.0",
                 "php": "^7.2"
             },
             "conflict": {
@@ -511,11 +511,11 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-03-08T20:15:17+00:00"
+            "time": "2020-03-09T07:34:24+00:00"
         },
         {
             "name": "league/mime-type-detection",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
@@ -3945,7 +3945,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "league/flysystem": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
