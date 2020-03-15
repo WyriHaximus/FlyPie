@@ -40,6 +40,9 @@
             "tests/functions.php"
         ]
     },
+    "suggest": {
+        "async-aws/flysystem-s3": "Needed to support the AwsS3Adapter Factory"
+    },
     "scripts": {
         "all": [
             "@phpcs",
