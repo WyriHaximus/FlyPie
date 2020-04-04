@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace WyriHaximus\FlyPie;
 
@@ -12,8 +13,8 @@ class FilesystemRegistry
 {
     use StaticConfigTrait;
 
-    const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
-    const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
+    public const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
+    public const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
 
     // @codingStandardsIgnoreStart
     /**
@@ -66,6 +67,7 @@ class FilesystemRegistry
     public static function reset()
     {
         static::$instances = [];
+        static::$adapterClasses = [];
     }
 
     /**
