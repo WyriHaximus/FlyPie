@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f336a06338874cdf626c166713e4ef1",
+    "content-hash": "ca8dc2e3632b42363a1446dd9c5a74a1",
     "packages": [
         {
             "name": "aura/intl",
@@ -204,16 +204,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.6",
+            "version": "1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e"
+                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/47fe531de31fca4a1b997f87308e7d7804348f7e",
-                "reference": "47fe531de31fca4a1b997f87308e7d7804348f7e",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/95c63ab2117a72f48f5a55da9740a3273d45b7fd",
+                "reference": "95c63ab2117a72f48f5a55da9740a3273d45b7fd",
                 "shasum": ""
             },
             "require": {
@@ -256,7 +256,17 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2020-01-13T10:02:55+00:00"
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-08T08:27:21+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",
@@ -461,16 +471,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "2.0.0-alpha.1",
+            "version": "2.0.0-alpha.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "450143cd41530a020781cd3883375e5fb414ef72"
+                "reference": "0d8cdd573af8b6ad2baa60e4e9ba8a48b86e9bb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/450143cd41530a020781cd3883375e5fb414ef72",
-                "reference": "450143cd41530a020781cd3883375e5fb414ef72",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0d8cdd573af8b6ad2baa60e4e9ba8a48b86e9bb6",
+                "reference": "0d8cdd573af8b6ad2baa60e4e9ba8a48b86e9bb6",
                 "shasum": ""
             },
             "require": {
@@ -519,6 +529,10 @@
             ],
             "funding": [
                 {
+                    "url": "https://offset.earth/frankdejonge",
+                    "type": "custom"
+                },
+                {
                     "url": "https://github.com/frankdejonge",
                     "type": "github"
                 },
@@ -527,7 +541,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-09T07:34:24+00:00"
+            "time": "2020-03-21T15:57:57+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -936,16 +950,16 @@
     "packages-dev": [
         {
             "name": "async-aws/core",
-            "version": "0.4.0",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/core.git",
-                "reference": "b47d5867fce4c19ce445ce9902b8128fe809c593"
+                "reference": "d0916262716086b4babcbf52d1ed162e0ff62a7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/core/zipball/b47d5867fce4c19ce445ce9902b8128fe809c593",
-                "reference": "b47d5867fce4c19ce445ce9902b8128fe809c593",
+                "url": "https://api.github.com/repos/async-aws/core/zipball/d0916262716086b4babcbf52d1ed162e0ff62a7a",
+                "reference": "d0916262716086b4babcbf52d1ed162e0ff62a7a",
                 "shasum": ""
             },
             "require": {
@@ -961,7 +975,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -973,7 +987,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Async AWS core package with common classes and interfaces.",
+            "description": "AsyncAws core package with common classes and interfaces.",
             "funding": [
                 {
                     "url": "https://github.com/jderusse",
@@ -984,33 +998,36 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-14T23:01:16+00:00"
+            "time": "2020-04-05T13:29:48+00:00"
         },
         {
             "name": "async-aws/flysystem-s3",
-            "version": "0.3.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/flysystem-s3.git",
-                "reference": "6cbc1541c63c036d859b88ba7610495d0519334b"
+                "reference": "8269d32838439cb2c12d06dc36624cc859d7d4ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/6cbc1541c63c036d859b88ba7610495d0519334b",
-                "reference": "6cbc1541c63c036d859b88ba7610495d0519334b",
+                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/8269d32838439cb2c12d06dc36624cc859d7d4ee",
+                "reference": "8269d32838439cb2c12d06dc36624cc859d7d4ee",
                 "shasum": ""
             },
             "require": {
-                "async-aws/core": "^0.4",
-                "async-aws/s3": "^0.3",
-                "league/flysystem": "^1.0.65 || ^2.0.0-alpha.1",
+                "async-aws/core": "^0.5@dev",
+                "async-aws/s3": "^0.4@dev",
+                "league/flysystem": "^1.0.65 || ^2.0.0-alpha.2",
                 "league/mime-type-detection": "^1.0",
                 "php": "^7.2.5"
+            },
+            "require-dev": {
+                "league/flysystem-adapter-test-utilities": "2.x-dev"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.3-dev"
+                    "dev-master": "0.4-dev"
                 }
             },
             "autoload": {
@@ -1045,35 +1062,34 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-15T09:15:48+00:00"
+            "time": "2020-03-28T21:35:57+00:00"
         },
         {
             "name": "async-aws/s3",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/s3.git",
-                "reference": "8fc02d535bb77107046eaa01d8b624424c4c8df9"
+                "reference": "f368ebd7518dd30fe1c381eca19bc7b24508372e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/s3/zipball/8fc02d535bb77107046eaa01d8b624424c4c8df9",
-                "reference": "8fc02d535bb77107046eaa01d8b624424c4c8df9",
+                "url": "https://api.github.com/repos/async-aws/s3/zipball/f368ebd7518dd30fe1c381eca19bc7b24508372e",
+                "reference": "f368ebd7518dd30fe1c381eca19bc7b24508372e",
                 "shasum": ""
             },
             "require": {
-                "async-aws/core": "^0.4",
+                "async-aws/core": "^0.5",
                 "ext-dom": "*",
                 "ext-filter": "*",
                 "ext-hash": "*",
                 "ext-simplexml": "*",
-                "php": "^7.2.5",
-                "symfony/http-client-contracts": "^1.0 || ^2.0"
+                "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.3-dev"
+                    "dev-master": "0.4-dev"
                 }
             },
             "autoload": {
@@ -1085,7 +1101,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Async AWS S3 client.",
+            "description": "AsyncAws S3 client.",
             "keywords": [
                 "aws",
                 "s3"
@@ -1100,7 +1116,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-14T23:01:16+00:00"
+            "time": "2020-04-04T20:34:11+00:00"
         },
         {
             "name": "cakephp/debug_kit",
@@ -1206,16 +1222,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.10.1",
+            "version": "1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "b912a45da3e2b22f5cb5a23e441b697a295ba011"
+                "reference": "0b55f39d2fd6632c43a803a5ace0677f406e342c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/b912a45da3e2b22f5cb5a23e441b697a295ba011",
-                "reference": "b912a45da3e2b22f5cb5a23e441b697a295ba011",
+                "url": "https://api.github.com/repos/composer/composer/zipball/0b55f39d2fd6632c43a803a5ace0677f406e342c",
+                "reference": "0b55f39d2fd6632c43a803a5ace0677f406e342c",
                 "shasum": ""
             },
             "require": {
@@ -1282,17 +1298,7 @@
                 "dependency",
                 "package"
             ],
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-03-13T19:34:27+00:00"
+            "time": "2020-04-09T14:26:35+00:00"
         },
         {
             "name": "composer/semver",
@@ -4418,7 +4424,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "league/flysystem": 15
+        "league/flysystem": 15,
+        "async-aws/flysystem-s3": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
