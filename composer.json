@@ -20,7 +20,7 @@
         "league/flysystem": "^2.0.0-alpha.2"
     },
     "require-dev": {
-        "async-aws/flysystem-s3": "dev-master",
+        "async-aws/flysystem-s3": "^0.3.1",
         "cakephp/debug_kit": "^4.0",
         "lorenzo/piping-bag": "^1.0",
         "phake/phake": "3.*",
