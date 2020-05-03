@@ -2,16 +2,3 @@ includes:
 	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
 parameters:
     level: 5
-    ignoreErrors:
-        -
-            message: "#^Instantiated class AsyncAws\\\\S3\\\\S3Client not found\\.$#"
-            count: 1
-            path: src/Factory/AwsS3AdapterFactory.php
-        -
-            message: "#^Instantiated class AsyncAws\\\\Flysystem\\\\S3\\\\S3FilesystemV2 not found\\.$#"
-            count: 1
-            path: src/Factory/AwsS3AdapterFactory.php
-        -
-            message: "#^Method WyriHaximus\\\\FlyPie\\\\Factory\\\\AwsS3AdapterFactory\\:\\:client() should return bool|League\\\\Flysystem\\\\FilesystemAdapter but returns AsyncAws\\\\Flysystem\\\\S3\\\\S3FilesystemV2\\.$#"
-            count: 1
-            path: src/Factory/AwsS3AdapterFactory.php
