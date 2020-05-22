@@ -459,16 +459,16 @@
         },
         {
             "name": "laminas/laminas-zendframework-bridge",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
-                "reference": "bfbbdb6c998d50dbf69d2187cb78a5f1fa36e1e9"
+                "reference": "fcd87520e4943d968557803919523772475e8ea3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/bfbbdb6c998d50dbf69d2187cb78a5f1fa36e1e9",
-                "reference": "bfbbdb6c998d50dbf69d2187cb78a5f1fa36e1e9",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/fcd87520e4943d968557803919523772475e8ea3",
+                "reference": "fcd87520e4943d968557803919523772475e8ea3",
                 "shasum": ""
             },
             "require": {
@@ -519,7 +519,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2020-04-03T16:01:00+00:00"
+            "time": "2020-05-20T16:45:56+00:00"
         },
         {
             "name": "league/flysystem",
@@ -1034,16 +1034,16 @@
     "packages-dev": [
         {
             "name": "async-aws/core",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/core.git",
-                "reference": "b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91"
+                "reference": "f9309532be4216b59da3c63ef25538d499dadac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/core/zipball/b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91",
-                "reference": "b12f69c0acb6a0abdf6f0e26cc0c5a480f6a7b91",
+                "url": "https://api.github.com/repos/async-aws/core/zipball/f9309532be4216b59da3c63ef25538d499dadac0",
+                "reference": "f9309532be4216b59da3c63ef25538d499dadac0",
                 "shasum": ""
             },
             "require": {
@@ -1051,7 +1051,9 @@
                 "ext-json": "*",
                 "ext-simplexml": "*",
                 "php": "^7.2.5",
-                "psr/log": "~1.0",
+                "psr/cache": "^1.0",
+                "psr/log": "^1.0",
+                "symfony/deprecation-contracts": "^2.1",
                 "symfony/http-client": "^4.4 || ^5.0",
                 "symfony/http-client-contracts": "^1.1.8 || ^2.0",
                 "symfony/service-contracts": "^1.0 || ^2.0"
@@ -1095,7 +1097,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-07T21:27:54+00:00"
+            "time": "2020-05-21T16:57:17+00:00"
         },
         {
             "name": "async-aws/flysystem-s3",
@@ -1166,20 +1168,20 @@
         },
         {
             "name": "async-aws/s3",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/s3.git",
-                "reference": "fcf78eb936632d66215c6b8019c6c71ee224454a"
+                "reference": "5f0e149b82eb82a1eef99220073e5338c69fe155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/s3/zipball/fcf78eb936632d66215c6b8019c6c71ee224454a",
-                "reference": "fcf78eb936632d66215c6b8019c6c71ee224454a",
+                "url": "https://api.github.com/repos/async-aws/s3/zipball/5f0e149b82eb82a1eef99220073e5338c69fe155",
+                "reference": "5f0e149b82eb82a1eef99220073e5338c69fe155",
                 "shasum": ""
             },
             "require": {
-                "async-aws/core": "^1.0",
+                "async-aws/core": "^1.2",
                 "ext-dom": "*",
                 "ext-filter": "*",
                 "ext-hash": "*",
@@ -1210,7 +1212,7 @@
                 "sdk"
             ],
             "support": {
-                "source": "https://github.com/async-aws/s3/tree/master"
+                "source": "https://github.com/async-aws/s3/tree/1.2.0"
             },
             "funding": [
                 {
@@ -1222,7 +1224,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-07T21:27:54+00:00"
+            "time": "2020-05-21T16:57:17+00:00"
         },
         {
             "name": "cakephp/debug_kit",
@@ -2879,6 +2881,55 @@
             "time": "2020-04-23T04:39:42+00:00"
         },
         {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/master"
+            },
+            "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -4006,6 +4057,69 @@
                 }
             ],
             "time": "2020-03-30T11:42:42+00:00"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "ede224dcbc36138943a296107db2b8b2a690ac1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/ede224dcbc36138943a296107db2b8b2a690ac1c",
+                "reference": "ede224dcbc36138943a296107db2b8b2a690ac1c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-02-14T07:31:56+00:00"
         },
         {
             "name": "symfony/filesystem",
