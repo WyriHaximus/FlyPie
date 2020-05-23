@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56d5d8dfe82e71ec8e5a345fac3722a8",
+    "content-hash": "8e0f1fd623e8baeca83704ba7ac6c793",
     "packages": [
         {
             "name": "aura/intl",
@@ -1101,16 +1101,16 @@
         },
         {
             "name": "async-aws/flysystem-s3",
-            "version": "0.3.3",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/async-aws/flysystem-s3.git",
-                "reference": "131b9325f65d0fda45515d5f4f6f283398fcc3e0"
+                "reference": "9877eb4321de89c5cfa09778689c67ed8d9888e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/131b9325f65d0fda45515d5f4f6f283398fcc3e0",
-                "reference": "131b9325f65d0fda45515d5f4f6f283398fcc3e0",
+                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/9877eb4321de89c5cfa09778689c67ed8d9888e4",
+                "reference": "9877eb4321de89c5cfa09778689c67ed8d9888e4",
                 "shasum": ""
             },
             "require": {
@@ -1126,7 +1126,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "0.5-dev"
                 }
             },
             "autoload": {
@@ -1144,12 +1144,15 @@
                     "email": "tobias.nyholm@gmail.com"
                 }
             ],
-            "description": "Flysystem S3 adapter",
+            "description": "Flysystem S3 adapter from AsyncAws.",
             "keywords": [
                 "Flysystem",
+                "amazon",
+                "async-aws",
                 "aws",
                 "filesystem",
-                "s3"
+                "s3",
+                "sdk"
             ],
             "support": {
                 "source": "https://github.com/async-aws/flysystem-s3/tree/master"
@@ -1164,7 +1167,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-03T09:57:28+00:00"
+            "time": "2020-05-21T16:57:17+00:00"
         },
         {
             "name": "async-aws/s3",
@@ -2785,16 +2788,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.4",
+            "version": "8.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
+                "reference": "63dda3b212a0025d380a745f91bdb4d8c985adb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
-                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/63dda3b212a0025d380a745f91bdb4d8c985adb7",
+                "reference": "63dda3b212a0025d380a745f91bdb4d8c985adb7",
                 "shasum": ""
             },
             "require": {
@@ -2866,7 +2869,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.4"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/8.5.5"
             },
             "funding": [
                 {
@@ -2878,7 +2881,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-23T04:39:42+00:00"
+            "time": "2020-05-22T13:51:52+00:00"
         },
         {
             "name": "psr/cache",
@@ -2984,16 +2987,16 @@
         },
         {
             "name": "ray/aop",
-            "version": "2.9.4",
+            "version": "2.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Aop.git",
-                "reference": "cdec1dc11619460fe2dc08a2f10067eb696212f8"
+                "reference": "cd0ffb72977892813a213df93faa268eb6c25ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/cdec1dc11619460fe2dc08a2f10067eb696212f8",
-                "reference": "cdec1dc11619460fe2dc08a2f10067eb696212f8",
+                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/cd0ffb72977892813a213df93faa268eb6c25ae6",
+                "reference": "cd0ffb72977892813a213df93faa268eb6c25ae6",
                 "shasum": ""
             },
             "require": {
@@ -3034,9 +3037,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ray-di/Ray.Aop/issues",
-                "source": "https://github.com/ray-di/Ray.Aop/tree/2.9.4"
+                "source": "https://github.com/ray-di/Ray.Aop/tree/2.9.5"
             },
-            "time": "2020-05-15T15:52:48+00:00"
+            "time": "2020-05-22T09:56:22+00:00"
         },
         {
             "name": "ray/compiler",
