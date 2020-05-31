@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-versions: ['7.2', '7.3', '7.4']
         dependencies: ['lowest', 'highest']
+        php-versions: ['7.2', '7.3', '7.4']
     name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-latest
     steps:
     - name: Checkout
