@@ -21,7 +21,7 @@ class FilesystemProvider implements ProviderInterface
     }
 
     /**
-     * @return \League\Flysystem\FilesystemInterface
+     * @return \League\Flysystem\Filesystem
      * @throws \Exception
      */
     public function get()

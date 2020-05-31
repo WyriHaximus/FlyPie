@@ -22,8 +22,8 @@ final class FunctionalTest extends TestCase
                 __DIR__,
             ],
         ]);
-        $contents = FilesystemRegistry::retrieve('tests')->listContents();
-        $this->assertSame([
+        $contents = FilesystemRegistry::retrieve('tests')->listContents('');
+        $this->assertEqualsCanonicalizing([
             'bootstrap.php',
             'FilesystemsRegistryTest.php',
             'FilesystemsTraitTest.php',
@@ -31,6 +31,6 @@ final class FunctionalTest extends TestCase
             'functions.php',
         ], array_map(function ($file) {
             return $file['path'];
-        }, $contents));
+        }, iterator_to_array($contents)));
     }
 }

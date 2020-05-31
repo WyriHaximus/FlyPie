@@ -19,7 +19,7 @@ class FilesystemsRegistryTest extends TestCase
         FilesystemRegistry::reset();
         $this->callbackFired = false;
         $GLOBALS['THIS_callbackFiredStatic'] = false;
-        $GLOBALS['THIS'] = $this->createMock('League\Flysystem\AdapterInterface');
+        $GLOBALS['THIS'] = $this->createMock('League\Flysystem\FilesystemAdapter');
     }
 
     public function tearDown(): void
@@ -47,7 +47,7 @@ class FilesystemsRegistryTest extends TestCase
     public function testRetrieveClient()
     {
         Configure::write('WyriHaximus.FlyPie.existing', [
-            'client' => $this->createMock('League\Flysystem\AdapterInterface'),
+            'client' => $this->createMock('League\Flysystem\FilesystemAdapter'),
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
     }
@@ -57,7 +57,7 @@ class FilesystemsRegistryTest extends TestCase
         $callbackFired = false;
         $callback = function () use (&$callbackFired) {
             $callbackFired = true;
-            return $this->createMock('League\Flysystem\AdapterInterface');
+            return $this->createMock('League\Flysystem\FilesystemAdapter');
         };
         Configure::write('WyriHaximus.FlyPie.existing', [
             'factory' => $callback,
@@ -78,7 +78,7 @@ class FilesystemsRegistryTest extends TestCase
     public function retrieveFactoryStringArrayChecker()
     {
         $this->callbackFired = true;
-        return $this->createMock('League\Flysystem\AdapterInterface');
+        return $this->createMock('League\Flysystem\FilesystemAdapter');
     }
 
     public function testRetrieveFactoryStringStatic()
@@ -95,7 +95,7 @@ class FilesystemsRegistryTest extends TestCase
         $callbackFired = false;
         $callback = function () use (&$callbackFired) {
             $callbackFired = true;
-            return $this->createMock('League\Flysystem\AdapterInterface');
+            return $this->createMock('League\Flysystem\FilesystemAdapter');
         };
         EventManager::instance()->on('WyriHaximus.Tests.FlyPie.existing', [], $callback);
         Configure::write('WyriHaximus.FlyPie.existing', [
@@ -129,7 +129,7 @@ class FilesystemsRegistryTest extends TestCase
     public function testRetrieveAdapterFQCN()
     {
         Configure::write('WyriHaximus.FlyPie.existing', [
-            'adapter' => '\\League\\Flysystem\\Adapter\\Local',
+            'adapter' => '\\League\\Flysystem\\Local\\LocalFilesystemAdapter',
             'vars' => [
                 __DIR__,
             ],

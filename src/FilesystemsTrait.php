@@ -9,7 +9,7 @@ trait FilesystemsTrait
      *
      * @param string $alias Alias name requested.
      *
-     * @return \League\Flysystem\FilesystemInterface
+     * @return \League\Flysystem\Filesystem
      */
     public function filesystem($alias)
     {

@@ -2,8 +2,8 @@
 
 namespace WyriHaximus\FlyPie\Factory;
 
-use Aws\S3\S3Client;
-use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use AsyncAws\Flysystem\S3\S3FilesystemV2;
+use AsyncAws\S3\S3Client;
 
 class AwsS3AdapterFactory
 {
@@ -12,7 +12,7 @@ class AwsS3AdapterFactory
      *
      * @param array $config list of options parsed from dsn
      *
-     * @return \League\Flysystem\AdapterInterface|bool
+     * @return \League\Flysystem\FilesystemAdapter|bool
      */
     public static function client($config)
     {
@@ -21,14 +21,11 @@ class AwsS3AdapterFactory
         ];
         $config += $defaults;
         $client = new S3Client([
-            'credentials' => [
-                'key' => $config['username'],
-                'secret' => $config['password'],
-            ],
+            'accessKeyId' => $config['username'],
+            'accessKeySecret' => $config['password'],
             'region' => $config['region'],
-            'version' => $config['version'],
         ]);
 
-        return new AwsS3Adapter($client, $config['host'], $config['path']);
+        return new S3FilesystemV2($client, $config['host'], $config['path']);
     }
 }
