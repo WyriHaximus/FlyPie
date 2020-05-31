@@ -23,7 +23,7 @@ final class FunctionalTest extends TestCase
             ],
         ]);
         $contents = FilesystemRegistry::retrieve('tests')->listContents('');
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'bootstrap.php',
             'FilesystemsRegistryTest.php',
             'FilesystemsTraitTest.php',
