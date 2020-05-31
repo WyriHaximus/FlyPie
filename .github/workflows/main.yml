@@ -41,12 +41,12 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - if ${{ matric.dependencies }} == 'lowest'
-      name: Use lowest dependencies
+    - name: Use lowest dependencies
+      if: ${{ matric.dependencies == 'lowest' }}
       run: composer update --prefer-lowest --no-progress --no-suggest -n
 
-    - if ${{ matric.dependencies }} == 'highest'
-      name: Use lowest dependencies
+    - name: Use lowest dependencies
+      if: ${{ matric.dependencies == 'highest' }}
       run: composer update --no-progress --no-suggest -n
 
     - name: PHP CodeSniffer
