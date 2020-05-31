@@ -50,16 +50,9 @@
             "@stan",
             "@phpunit"
         ],
-        "travis": [
-            "@phpcs",
-            "@stan",
-            "@phpunit-travis"
-        ],
         "phpcs": "phpcs -p",
         "stan": "phpstan analyse src/ -vvv",
-        "phpunit": "phpunit --coverage-text",
-        "phpunit-travis": "phpunit --coverage-text --coverage-clover ./build/logs/clover.xml",
-        "travis-coverage": "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+        "phpunit": "phpunit --coverage-text"
     },
     "config": {
         "sort-packages": true,
