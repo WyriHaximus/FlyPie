@@ -13,10 +13,10 @@ class FilesystemRegistry
 {
     use StaticConfigTrait;
 
+    // @codingStandardsIgnoreStart
     public const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
     public const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
 
-    // @codingStandardsIgnoreStart
     /**
      * An array mapping url schemes to fully qualified driver class names
      *
