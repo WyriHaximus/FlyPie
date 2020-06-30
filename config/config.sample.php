@@ -1,13 +1,13 @@
 <?php
 
-use League\Flysystem\Adapter\Ftp;
-use League\Flysystem\Adapter\Local;
+use League\Flysystem\FTP\FtpAdapter;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 
 return [
     'WyriHaximus' => [
         'FlyPie' => [
             'thumbnails' => [
-                'adapter' => Local::class,
+                'adapter' => LocalFilesystemAdapter::class,
 
                 /**
                  * Array with data required to build the client, no need for it
@@ -45,7 +45,7 @@ return [
 
             // FTP example
             'some-ftp-server' => [
-                'adapter' => Ftp::class,
+                'adapter' => FtpAdapter::class,
                 'vars' => [
                     [
                         'host' => 'example.com',
