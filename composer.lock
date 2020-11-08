@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "803c29d16bc1c58e21feaa6fbde5ebb8",
+    "content-hash": "dd148bad74626d5c3a82a4e020955440",
     "packages": [
         {
             "name": "aura/intl",
@@ -2062,6 +2062,77 @@
                 "source": "https://github.com/koriym/print_o/tree/develop"
             },
             "time": "2015-02-13T19:04:21+00:00"
+        },
+        {
+            "name": "league/flysystem-async-aws-s3",
+            "version": "2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-async-aws-s3.git",
+                "reference": "f32c53b4abecefcdd53047031e6179864455036d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-async-aws-s3/zipball/f32c53b4abecefcdd53047031e6179864455036d",
+                "reference": "f32c53b4abecefcdd53047031e6179864455036d",
+                "shasum": ""
+            },
+            "require": {
+                "async-aws/s3": "^1.5",
+                "league/flysystem": "^2.0.0-RC1",
+                "league/mime-type-detection": "^1.0.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "async-aws/simple-s3": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\AsyncAwsS3\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "AsyncAws S3 filesystem adapter for Flysystem.",
+            "keywords": [
+                "Flysystem",
+                "async-aws",
+                "aws",
+                "file",
+                "files",
+                "filesystem",
+                "s3",
+                "storage"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/flysystem-async-aws-s3/issues",
+                "source": "https://github.com/thephpleague/flysystem-async-aws-s3/tree/2.x"
+            },
+            "funding": [
+                {
+                    "url": "https://offset.earth/frankdejonge",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/flysystem",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-08T13:58:37+00:00"
         },
         {
             "name": "lorenzo/piping-bag",
@@ -5358,7 +5429,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "league/flysystem": 20
+        "league/flysystem": 20,
+        "league/flysystem-async-aws-s3": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
