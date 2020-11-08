@@ -23,7 +23,7 @@ class FilesystemRegistry
      * @var array
      */
     protected static $_dsnClassMap = [
-        's3' => 'WyriHaximus\FlyPie\Factory\AwsS3AdapterFactory',
+        's3' => 'WyriHaximus\FlyPie\Factory\AsyncAwsS3AdapterFactory',
     ];
     // @codingStandardsIgnoreEnd
 
@@ -196,17 +196,20 @@ class FilesystemRegistry
             return (new \ReflectionClass($adapter))->newInstanceArgs($vars);
         }
 
+        // AsyncAwsS3, AwsS3V3, Ftp and ZipArchive
         $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Adapter';
         if (class_exists($leagueAdapter)) {
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
 
-        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'Filesystem';
+        // Local and InMemory
+        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'FilesystemAdapter';
         if (class_exists($leagueAdapter)) {
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }
 
-        $leagueAdapter = '\\League\\Flysystem\\' . $adapter . '\\' . $adapter . 'FilesystemAdapter';
+        // Sftp
+        $leagueAdapter = '\\League\\Flysystem\\PhpseclibV2\\' . $adapter . 'Adapter';
         if (class_exists($leagueAdapter)) {
             return (new \ReflectionClass($leagueAdapter))->newInstanceArgs($vars);
         }

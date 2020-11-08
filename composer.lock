@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cbe0ac64f2994ca676f59351a0ffb6b4",
+    "content-hash": "803c29d16bc1c58e21feaa6fbde5ebb8",
     "packages": [
         {
             "name": "aura/intl",
@@ -58,16 +58,16 @@
         },
         {
             "name": "cakephp/cakephp",
-            "version": "4.1.5",
+            "version": "4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "3d409286a21a4b95106426ab383b89050d561585"
+                "reference": "d8c526bb3e5640235282d189fb071e9c800b4f49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/3d409286a21a4b95106426ab383b89050d561585",
-                "reference": "3d409286a21a4b95106426ab383b89050d561585",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/d8c526bb3e5640235282d189fb071e9c800b4f49",
+                "reference": "d8c526bb3e5640235282d189fb071e9c800b4f49",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/cakephp"
             },
-            "time": "2020-10-05T01:00:40+00:00"
+            "time": "2020-11-08T02:26:32+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -528,35 +528,38 @@
         },
         {
             "name": "league/flysystem",
-            "version": "2.0.0-RC1",
+            "version": "2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "7a32c3e98ed6a3da81c529b508bd58d9294a0e4e"
+                "reference": "2fe307d24d8172d45a3c5b60edbbe51abd33cf7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7a32c3e98ed6a3da81c529b508bd58d9294a0e4e",
-                "reference": "7a32c3e98ed6a3da81c529b508bd58d9294a0e4e",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2fe307d24d8172d45a3c5b60edbbe51abd33cf7f",
+                "reference": "2fe307d24d8172d45a3c5b60edbbe51abd33cf7f",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "league/mime-type-detection": "^1.0.0",
-                "php": "^7.2"
+                "php": "^7.2 || ^8.0"
             },
             "conflict": {
                 "guzzlehttp/ringphp": "<1.1.1"
             },
             "require-dev": {
+                "async-aws/s3": "^1.5",
+                "async-aws/simple-s3": "^1.0",
                 "aws/aws-sdk-php": "^3.132.4",
                 "composer/semver": "^3.0",
                 "ext-fileinfo": "*",
                 "friendsofphp/php-cs-fixer": "^2.16",
                 "phpseclib/phpseclib": "^2.0",
                 "phpstan/phpstan": "^0.12.26",
-                "phpunit/phpunit": "^8.5"
+                "phpunit/phpunit": "^8.5 || ^9.4"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -589,7 +592,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/2.0.0-RC1"
+                "source": "https://github.com/thephpleague/flysystem/tree/2.x"
             },
             "funding": [
                 {
@@ -605,7 +608,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-20T21:08:21+00:00"
+            "time": "2020-11-08T16:43:11+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -1093,76 +1096,6 @@
             ],
             "support": {
                 "source": "https://github.com/async-aws/core/tree/1.6.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/jderusse",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nyholm",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-09-26T16:48:43+00:00"
-        },
-        {
-            "name": "async-aws/flysystem-s3",
-            "version": "0.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/async-aws/flysystem-s3.git",
-                "reference": "457242f836620ebc0b88f1a3f03cc3610a9c3f0e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/async-aws/flysystem-s3/zipball/457242f836620ebc0b88f1a3f03cc3610a9c3f0e",
-                "reference": "457242f836620ebc0b88f1a3f03cc3610a9c3f0e",
-                "shasum": ""
-            },
-            "require": {
-                "async-aws/core": "^1.0",
-                "async-aws/s3": "^1.0",
-                "league/flysystem": "^1.0.65 || ^2.0.0-alpha.2",
-                "league/mime-type-detection": "^1.0",
-                "php": "^7.2.5 || ^8.0"
-            },
-            "require-dev": {
-                "league/flysystem-adapter-test-utilities": "2.0.0-beta.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "AsyncAws\\Flysystem\\S3\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tobias Nyholm",
-                    "email": "tobias.nyholm@gmail.com"
-                }
-            ],
-            "description": "Flysystem S3 adapter from AsyncAws.",
-            "keywords": [
-                "Flysystem",
-                "amazon",
-                "async-aws",
-                "aws",
-                "filesystem",
-                "s3",
-                "sdk"
-            ],
-            "support": {
-                "source": "https://github.com/async-aws/flysystem-s3/tree/0.4.2"
             },
             "funding": [
                 {
@@ -5425,7 +5358,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "league/flysystem": 5
+        "league/flysystem": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -17,10 +17,10 @@
     "require": {
         "php": "^7.2.5",
         "cakephp/cakephp": "^4.0",
-        "league/flysystem": "^2.0.0-RC1"
+        "league/flysystem": "2.x-dev as 2.0.0-RC2"
     },
     "require-dev": {
-        "async-aws/flysystem-s3": "^0.4.0",
+        "async-aws/s3": "^1.5",
         "cakephp/debug_kit": "^4.0",
         "lorenzo/piping-bag": "^1.0",
         "phake/phake": "3.*",
@@ -43,7 +43,7 @@
         ]
     },
     "suggest": {
-        "async-aws/flysystem-s3": "Needed to support the AwsS3Adapter Factory"
+        "async-aws/s3": "Needed to support the AsyncAwsS3Adapter Factory"
     },
     "scripts": {
         "all": [

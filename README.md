@@ -82,9 +82,9 @@ per case basis as extra composer packages. For all supported adapters see:
 
 ## Example Data Source Names ##
 
-| Adapter      | Data Source Name                                |
-| ------------ | ----------------------------------------------- |
-| AwsS3Adapter | `s3://key:secret@bucket/path?region={{region}}` |
+| Adapter           | Data Source Name                                |
+| ----------------- | ----------------------------------------------- |
+| AsyncAwsS3Adapter | `s3://key:secret@bucket/path?region={{region}}` |
 
 ## CakePHP version compatibility matrix ##
 

@@ -2,10 +2,10 @@
 
 namespace WyriHaximus\FlyPie\Factory;
 
-use AsyncAws\Flysystem\S3\S3FilesystemV2;
 use AsyncAws\S3\S3Client;
+use League\Flysystem\AsyncAwsS3\AsyncAwsS3Adapter;
 
-class AwsS3AdapterFactory
+class AsyncAwsS3AdapterFactory
 {
     /**
      * Return new Adapter
@@ -26,6 +26,6 @@ class AwsS3AdapterFactory
             'region' => $config['region'],
         ]);
 
-        return new S3FilesystemV2($client, $config['host'], $config['path']);
+        return new AsyncAwsS3Adapter($client, $config['host'], $config['path']);
     }
 }
