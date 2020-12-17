@@ -38,7 +38,7 @@ class FilesystemsRegistryTest extends TestCase
         Configure::write('WyriHaximus.FlyPie.existing', [
             'adapter' => 'Local',
             'vars' => [
-                'path' => __DIR__,
+                __DIR__,
             ],
         ]);
         $this->assertInstanceOf('League\Flysystem\Filesystem', FilesystemRegistry::retrieve('existing'));
