@@ -41,7 +41,6 @@ jobs:
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: composer-${{ matrix.php-versions }}-${{ matrix.dependencies }}
-          restore-keys: composer-${{ matrix.php-versions }}-${{ matrix.dependencies }}
 
       - name: Install locked dependencies
         if: ${{ matrix.dependencies == 'highest' && matrix.php-versions == '8.0' }}
