@@ -40,7 +40,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: composer-${{ matrix.php-versions }}-${{ matrix.dependencies }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Install locked dependencies
         if: ${{ matrix.dependencies == 'highest' && matrix.php-versions == '8.0' }}
