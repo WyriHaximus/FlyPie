@@ -1,13 +1,13 @@
 FlyPie
 ======
 
-Lightweight [Flysystem](http://flysystem.thephpleague.com/) wrapper/configuration plugin for CakePHP.
+Lightweight [Flysystem](https://flysystem.thephpleague.com/v2/docs/) wrapper/configuration plugin for CakePHP.
 
 See below for CakePHP core version compatibility matrix.
 
 ## Installation ##
 
-To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `^`.
+To install via [Composer](https://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `^`.
 
 ```bash
 composer require wyrihaximus/fly-pie 
@@ -72,13 +72,13 @@ For example this lists all files in a `S3` bucket with thumbnails:
 $this->filesystem('s3_thumbnails')->listContents();
 ```
 
-For more details on how to use [Flysystem, check out its General Usage section](https://github.com/thephpleague/flysystem#general-usage).
+For more details on how to use [Flysystem, check out its Getting Started section](https://github.com/thephpleague/flysystem#getting-started).
 
 ## Supported Adapters ##
 
 By default only a few adapters are included. Extra adapters can be added on a 
 per case basis as extra composer packages. For all supported adapters see: 
-[https://github.com/thephpleague/flysystem#adapters](https://github.com/thephpleague/flysystem#adapters)
+[https://github.com/thephpleague/flysystem#commonly-used-adapters](https://github.com/thephpleague/flysystem#commonly-used-adapters)
 
 ## Example Data Source Names ##
 
@@ -95,7 +95,7 @@ per case basis as extra composer packages. For all supported adapters see:
 
 ## License ##
 
-Copyright 2017 [Cees-Jan Kiewiet](http://wyrihaximus.net/)
+Copyright 2017 [Cees-Jan Kiewiet](https://www.wyrihaximus.net/)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
