@@ -45,7 +45,7 @@ jobs:
 
       - name: Install locked dependencies
         if: ${{ matrix.dependencies == 'highest' && matrix.php-versions == '8.0' }}
-        run: composer install --prefer-dist --no-progress
+        run: composer install --no-progress
 
       - name: Use lowest dependencies
         if: ${{ matrix.dependencies == 'lowest' }}

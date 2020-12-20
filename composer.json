@@ -57,7 +57,9 @@
         "phpunit": "phpunit --coverage-text"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
     },
     "prefer-stable": true,
     "minimum-stability": "RC"
