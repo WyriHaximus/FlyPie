@@ -60,7 +60,5 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "preferred-install": "dist"
-    },
-    "prefer-stable": true,
-    "minimum-stability": "RC"
+    }
 }

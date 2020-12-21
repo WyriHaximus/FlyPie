@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c51d5d252891f3ce0afbb85dedb752f1",
+    "content-hash": "7aeafa84d3bd95d9d93b09201c694665",
     "packages": [
         {
             "name": "cakephp/cakephp",
-            "version": "4.2.0-RC1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "96b433b4aa135ee5ca4a8179ccf1e49c7893641b"
+                "reference": "d4b68a6dd2404d0b8cc7431838a39ec44b3f5f6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/96b433b4aa135ee5ca4a8179ccf1e49c7893641b",
-                "reference": "96b433b4aa135ee5ca4a8179ccf1e49c7893641b",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/d4b68a6dd2404d0b8cc7431838a39ec44b3f5f6b",
+                "reference": "d4b68a6dd2404d0b8cc7431838a39ec44b3f5f6b",
                 "shasum": ""
             },
             "require": {
@@ -107,7 +107,7 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/cakephp"
             },
-            "time": "2020-11-30T02:36:47+00:00"
+            "time": "2020-12-21T03:04:22+00:00"
         },
         {
             "name": "cakephp/chronos",
@@ -1247,20 +1247,20 @@
         },
         {
             "name": "cakephp/debug_kit",
-            "version": "4.3.9",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "ca09b72339ec52ff15c1b10338106fa674e3c079"
+                "reference": "752e365e6700fb2ea29a84dfeee2f13ac2786391"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/ca09b72339ec52ff15c1b10338106fa674e3c079",
-                "reference": "ca09b72339ec52ff15c1b10338106fa674e3c079",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/752e365e6700fb2ea29a84dfeee2f13ac2786391",
+                "reference": "752e365e6700fb2ea29a84dfeee2f13ac2786391",
                 "shasum": ""
             },
             "require": {
-                "cakephp/cakephp": "^4.1",
+                "cakephp/cakephp": "^4.2.0",
                 "cakephp/chronos": "^2.0",
                 "composer/composer": "^1.3 | ^2.0",
                 "jdorn/sql-formatter": "^1.2",
@@ -1309,7 +1309,7 @@
                 "issues": "https://github.com/cakephp/debug_kit/issues",
                 "source": "https://github.com/cakephp/debug_kit"
             },
-            "time": "2020-11-27T15:27:10+00:00"
+            "time": "2020-12-21T03:05:11+00:00"
         },
         {
             "name": "cakephp/plugin-installer",
@@ -5903,9 +5903,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.2.5"
