@@ -3,7 +3,7 @@ FlyPie
 
 Lightweight [Flysystem](https://flysystem.thephpleague.com/v2/docs/) wrapper/configuration plugin for CakePHP.
 
-See below for CakePHP core version compatibility matrix.
+See below for CakePHP V4 core version compatibility matrix.
 
 ## Installation ##
 
