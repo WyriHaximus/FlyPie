@@ -39,4 +39,4 @@ Some things that will increase the chance that your pull request is accepted:
 * Follow PSR2 (travis will also check for this).
 * Write a [good commit message][commit].
 
-[commit]: http://chris.beams.io/posts/git-commit/
+[commit]: https://cbea.ms/git-commit/
