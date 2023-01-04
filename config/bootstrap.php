@@ -36,7 +36,7 @@ Configure::write('PipingBag.modules', array_merge(
 /**
  * Doctrine annotation autoloader
  */
-if (class_exists('Doctrine\Common\Annotations\AnnotationRegistry')) {
+if (class_exists('Doctrine\Common\Annotations\AnnotationRegistry') && method_exists(AnnotationRegistry::class, 'registerLoader')) {
     AnnotationRegistry::registerLoader(function ($class) {
         return class_exists($class);
     });
