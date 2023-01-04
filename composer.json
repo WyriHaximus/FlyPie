@@ -44,7 +44,8 @@
         ]
     },
     "suggest": {
-        "league/flysystem-async-aws-s3": "Needed to support the AsyncAwsS3Adapter Factory"
+        "league/flysystem-async-aws-s3": "Needed to support the AsyncAwsS3Adapter Factory",
+        "lorenzo/piping-bag": "Dependencies Injection Container support"
     },
     "scripts": {
         "all": [
