@@ -23,21 +23,23 @@ if (Configure::read('debug')) {
 }
 */
 
-/**
- * DiC module registration
- */
-Configure::write('PipingBag.modules', array_merge(
-    (array)Configure::read('PipingBag.modules'),
-    [
-        'WyriHaximus\FlyPie\Di\FilesystemModule',
-    ]
-));
+if (class_exists('PipingBag\Di\PipingBag')) {
+    /**
+     * DiC module registration
+     */
+    Configure::write('PipingBag.modules', array_merge(
+        (array)Configure::read('PipingBag.modules'),
+        [
+            'WyriHaximus\FlyPie\Di\FilesystemModule',
+        ]
+    ));
 
-/**
- * Doctrine annotation autoloader
- */
-if (class_exists('Doctrine\Common\Annotations\AnnotationRegistry') && method_exists(AnnotationRegistry::class, 'registerLoader')) {
-    AnnotationRegistry::registerLoader(function ($class) {
-        return class_exists($class);
-    });
+    /**
+     * Doctrine annotation autoloader
+     */
+    if (class_exists('Doctrine\Common\Annotations\AnnotationRegistry') && method_exists(AnnotationRegistry::class, 'registerLoader')) {
+        AnnotationRegistry::registerLoader(function ($class) {
+            return class_exists($class);
+        });
+    }
 }
