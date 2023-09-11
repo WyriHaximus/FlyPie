@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\FlyPie\Di;
 
+use League\Flysystem\Filesystem;
 use Ray\Di\InjectionPointInterface;
 use Ray\Di\ProviderInterface;
 use WyriHaximus\FlyPie\FilesystemsTrait;
@@ -13,7 +14,7 @@ class FilesystemProvider implements ProviderInterface
     /**
      * @var \Ray\Di\InjectionPointInterface
      */
-    private $ip;
+    private InjectionPointInterface $ip;
 
     public function __construct(InjectionPointInterface $ip)
     {
@@ -24,7 +25,7 @@ class FilesystemProvider implements ProviderInterface
      * @return \League\Flysystem\Filesystem
      * @throws \Exception
      */
-    public function get()
+    public function get(): Filesystem
     {
         foreach ($this->ip->getQualifiers() as $qualifier) {
             if ($qualifier instanceof FilesystemInject) {

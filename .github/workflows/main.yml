@@ -7,16 +7,16 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         dependencies: ["lowest", "highest"]
-        php-versions: ["8.0", "8.1", "8.2"]
-    name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-20.04
+        php-versions: ["8.1", "8.2"]
+    name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2

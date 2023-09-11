@@ -22,7 +22,7 @@ class FilesystemRegistry
      *
      * @var array
      */
-    protected static $_dsnClassMap = [
+    protected static array $_dsnClassMap = [
         's3' => 'WyriHaximus\FlyPie\Factory\AsyncAwsS3AdapterFactory',
     ];
     // @codingStandardsIgnoreEnd
@@ -32,14 +32,14 @@ class FilesystemRegistry
      *
      * @var array
      */
-    public static $adapterClasses = [];
+    public static array $adapterClasses = [];
 
     /**
      * Instance cache.
      *
      * @var array
      */
-    protected static $instances = [];
+    protected static array $instances = [];
 
     /**
      * Build and return a preconfigured adapter.
@@ -48,7 +48,7 @@ class FilesystemRegistry
      *
      * @return \League\Flysystem\Filesystem
      */
-    public static function retrieve($alias)
+    public static function retrieve(string $alias): Filesystem
     {
         if (!isset(static::$instances[$alias])) {
             $adapter = static::create($alias);
@@ -64,7 +64,7 @@ class FilesystemRegistry
      *
      * @return void
      */
-    public static function reset()
+    public static function reset(): void
     {
         static::$instances = [];
         static::$adapterClasses = [];
@@ -79,7 +79,7 @@ class FilesystemRegistry
      *
      * @return \League\Flysystem\FilesystemAdapter
      */
-    protected static function create($alias)
+    protected static function create(string $alias): FilesystemAdapter
     {
         $aliasConfigKey = static::CONFIGURE_KEY_PREFIX . $alias;
         if (!Configure::check($aliasConfigKey)) {
@@ -112,7 +112,7 @@ class FilesystemRegistry
      *
      * @return bool
      */
-    protected static function existsAndInstanceOf($aliasConfigKey)
+    protected static function existsAndInstanceOf(string $aliasConfigKey): bool
     {
         return Configure::check($aliasConfigKey . '.client') &&
             Configure::read($aliasConfigKey . '.client') instanceof FilesystemAdapter;
@@ -125,7 +125,7 @@ class FilesystemRegistry
      *
      * @return bool
      */
-    protected static function existsAndVarsCount($aliasConfigKey)
+    protected static function existsAndVarsCount(string $aliasConfigKey): bool
     {
         return Configure::check($aliasConfigKey . '.vars') &&
             is_array(Configure::read($aliasConfigKey . '.vars'));
@@ -138,7 +138,7 @@ class FilesystemRegistry
      *
      * @return bool
      */
-    protected static function existsWithDsn($aliasConfigKey)
+    protected static function existsWithDsn(string $aliasConfigKey): bool
     {
         return Configure::check($aliasConfigKey . '.url') &&
             !empty(Configure::read($aliasConfigKey . '.url'));
@@ -152,7 +152,7 @@ class FilesystemRegistry
      *
      * @return mixed
      */
-    protected static function read($aliasConfigKey, $field)
+    protected static function read(string $aliasConfigKey, string $field): mixed
     {
         return Configure::read($aliasConfigKey . '.' . $field);
     }
@@ -166,7 +166,7 @@ class FilesystemRegistry
      *
      * @return mixed
      */
-    protected static function factory($factory)
+    protected static function factory(callable|string|array $factory): mixed
     {
         if (is_callable($factory)) {
             return $factory();
@@ -190,7 +190,7 @@ class FilesystemRegistry
      *
      * @return \League\Flysystem\FilesystemAdapter
      */
-    protected static function adapter($adapter, array $vars)
+    protected static function adapter(string $adapter, array $vars)
     {
         if (class_exists($adapter)) {
             return (new \ReflectionClass($adapter))->newInstanceArgs($vars);
@@ -226,7 +226,7 @@ class FilesystemRegistry
      *
      * @return \League\Flysystem\FilesystemAdapter
      */
-    protected static function adapterFromDsn(string $dsn)
+    protected static function adapterFromDsn(string $dsn): FilesystemAdapter
     {
         $vars = static::parseDsn($dsn);
 

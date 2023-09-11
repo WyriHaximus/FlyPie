@@ -10,16 +10,14 @@ class FilesystemPanel extends DebugPanel
 {
     const CONFIGURE_KEY = 'WyriHaximus.FlyPie';
 
-    // @codingStandardsIgnoreStart
-    public $plugin = 'WyriHaximus/FlyPie';
-    // @codingStandardsIgnoreEnd
+    public string $plugin = 'WyriHaximus/FlyPie';
 
     /**
      * Return all data with: All configured filesystems.
      *
      * @return array
      */
-    public function data()
+    public function data(): array
     {
         $data = [
             'filesystems' => array_keys((array)Configure::read(self::CONFIGURE_KEY)),
@@ -39,7 +37,7 @@ class FilesystemPanel extends DebugPanel
      *
      * @return string
      */
-    public function summary()
+    public function summary(): string
     {
         return strval(count((array)Configure::read(self::CONFIGURE_KEY)));
     }

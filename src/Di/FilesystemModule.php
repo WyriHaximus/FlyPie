@@ -6,7 +6,7 @@ use Ray\Di\AbstractModule;
 
 class FilesystemModule extends AbstractModule
 {
-    public function configure()
+    public function configure(): void
     {
         $this
             ->bind('League\Flysystem\FilesystemInterface')
