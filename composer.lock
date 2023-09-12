@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c0765804a3bb5dc0b2417640c1b0fb3",
+    "content-hash": "44cb7abf334c522dc541d60d4340f1fd",
     "packages": [
         {
             "name": "cakephp/cakephp",
@@ -3562,22 +3562,22 @@
         },
         {
             "name": "ray/aop",
-            "version": "2.13.1",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ray-di/Ray.Aop.git",
-                "reference": "601eb113508b666d3c98c3e42f92da3b6ed26436"
+                "reference": "0961e4af21677e6912853568d52415da11d22f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/601eb113508b666d3c98c3e42f92da3b6ed26436",
-                "reference": "601eb113508b666d3c98c3e42f92da3b6ed26436",
+                "url": "https://api.github.com/repos/ray-di/Ray.Aop/zipball/0961e4af21677e6912853568d52415da11d22f11",
+                "reference": "0961e4af21677e6912853568d52415da11d22f11",
                 "shasum": ""
             },
             "require": {
-                "doctrine/annotations": "^1.12",
+                "doctrine/annotations": "^1.12 || ^2.0",
                 "koriym/attributes": "^1.0.3",
-                "nikic/php-parser": "^4.13.2",
+                "nikic/php-parser": "^4.16",
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
@@ -3623,7 +3623,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ray-di/Ray.Aop/issues",
-                "source": "https://github.com/ray-di/Ray.Aop/tree/2.13.1"
+                "source": "https://github.com/ray-di/Ray.Aop/tree/2.14.0"
             },
             "funding": [
                 {
@@ -3635,7 +3635,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-01-13T02:45:59+00:00"
+            "time": "2023-09-11T15:53:21+00:00"
         },
         {
             "name": "ray/compiler",
