@@ -93,6 +93,7 @@ per case basis as extra composer packages. For all supported adapters see:
 | 1.x    | 3.x          | PHP 5.4   | 1.x       |
 | 2.x    | 4.x          | PHP 7.2   | 2.x       |
 | 3.x    | 4.x          | PHP 8.0.2 | 3.x       |
+| 4.x    | 5.x          | PHP 8.1   | 3.x       |
 
 ## License ##
 

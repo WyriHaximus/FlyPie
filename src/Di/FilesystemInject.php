@@ -11,14 +11,14 @@ use Ray\Di\Di\InjectInterface;
  */
 class FilesystemInject implements InjectInterface
 {
-    public $optional = '';
+    public string $optional = '';
 
-    public function isOptional()
+    public function isOptional(): bool
     {
         return (bool)$this->optional;
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return $this->optional;
     }

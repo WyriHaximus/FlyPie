@@ -41,7 +41,7 @@ class FilesystemPanelController extends Controller
      *
      * @return void
      */
-    public function listContents($filesystem, $path = '')
+    public function listContents(string $filesystem, string $path = '')
     {
         $this->set([
             '_serialize' => [

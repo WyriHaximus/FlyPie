@@ -4,6 +4,7 @@ namespace WyriHaximus\FlyPie\Factory;
 
 use AsyncAws\S3\S3Client;
 use League\Flysystem\AsyncAwsS3\AsyncAwsS3Adapter;
+use League\Flysystem\FilesystemAdapter;
 
 class AsyncAwsS3AdapterFactory
 {
@@ -12,9 +13,9 @@ class AsyncAwsS3AdapterFactory
      *
      * @param array $config list of options parsed from dsn
      *
-     * @return \League\Flysystem\FilesystemAdapter|bool
+     * @return \League\Flysystem\FilesystemAdapter
      */
-    public static function client($config)
+    public static function client(array $config): FilesystemAdapter
     {
         $defaults = [
             'path' => '',
