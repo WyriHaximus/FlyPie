@@ -29,7 +29,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dependencies: ["lowest", "highest"]
+        dependencies: ["lowest", "locked", "highest"]
         php-versions: ${{ fromJson(needs.supported-versions-matrix.outputs.version) }}
     name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-24.04
     steps:
@@ -40,7 +40,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
-          extensions: mbstring, intl
+          extensions: ${{ join(fromJson(needs.supported-versions-matrix.outputs.extensions), ',') }}
           coverage: pcov
           tools: cs2pr
 
@@ -50,29 +50,9 @@ jobs:
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Get composer cache directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: Cache dependencies
-        uses: actions/cache@v4
+      - uses: ramsey/composer-install@v3
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: Install locked dependencies
-        if: ${{ matrix.dependencies == 'highest' && matrix.php-versions == '8.3' }}
-        run: composer install --no-progress
-
-      - name: Use lowest dependencies
-        if: ${{ matrix.dependencies == 'lowest' }}
-        run: composer update --prefer-lowest --no-progress
-
-      - name: Use highest dependencies
-        if: ${{ matrix.dependencies == 'highest' && matrix.php-versions != '8.3' }}
-        run: composer update --no-progress
+          dependency-versions: ${{ matrix.dependencies }}
 
       - name: PHP CodeSniffer
         run: composer phpcs
