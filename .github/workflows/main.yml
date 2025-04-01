@@ -6,14 +6,32 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
+  supported-versions-matrix:
+    name: Supported Versions Matrix
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.supported-versions-matrix.outputs.version }}
+      extensions: ${{ steps.supported-versions-matrix.outputs.extensions }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            composer.json
+            composer.lock
+      - name: Support Versions Matric
+        id: supported-versions-matrix
+        uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
   run:
     runs-on: ubuntu-24.04
+    needs:
+      - supported-versions-matrix
     strategy:
       fail-fast: false
       matrix:
         dependencies: ["lowest", "highest"]
-        php-versions: ["8.1", "8.2", "8.3"]
-    name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-22.04
+        php-versions: ${{ fromJson(needs.supported-versions-matrix.outputs.version) }}
+    name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
