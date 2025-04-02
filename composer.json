@@ -25,7 +25,7 @@
         "cakephp/plugin-installer": "^2.0.1",
         "lorenzo/piping-bag": "^2.0",
         "phake/phake": "4.*",
-        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan": "^1.0 || ^2.0",
         "phpunit/phpunit": "^10.1.0",
         "ray/di": "^2.2",
         "squizlabs/php_codesniffer": "^3.12.0"
