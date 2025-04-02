@@ -62,7 +62,8 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "allow-plugins": {
-            "cakephp/plugin-installer": true
+            "cakephp/plugin-installer": true,
+            "aura/installer-default": true
         }
     }
 }
