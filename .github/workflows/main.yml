@@ -37,7 +37,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@ec406be512d7077f68eed36e63f4d91bc006edc4 # 2.35.4
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ join(fromJson(needs.supported-versions-matrix.outputs.extensions), ',') }}
