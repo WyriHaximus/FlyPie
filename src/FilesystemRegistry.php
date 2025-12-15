@@ -13,7 +13,7 @@ class FilesystemRegistry
 {
     use StaticConfigTrait;
 
-    // @codingStandardsIgnoreStart
+    // phpcs:disable
     public const CONFIGURE_KEY_PREFIX = 'WyriHaximus.FlyPie.';
     public const INVALID_ARGUMENT_MSG = 'Filesystem "%s" has no client or factory or parameters specific to build a client';
 
@@ -25,7 +25,7 @@ class FilesystemRegistry
     protected static array $_dsnClassMap = [
         's3' => 'WyriHaximus\FlyPie\Factory\AsyncAwsS3AdapterFactory',
     ];
-    // @codingStandardsIgnoreEnd
+    // phpcs:enable
 
     /**
      * Adapter class cache.
