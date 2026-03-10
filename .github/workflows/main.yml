@@ -50,7 +50,7 @@ jobs:
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@a35c6ebd3d08125aaf8852dff361e686a1a67947 # 3.2.0
         with:
           dependency-versions: ${{ matrix.dependencies }}
 
