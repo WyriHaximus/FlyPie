@@ -21,7 +21,7 @@ jobs:
             composer.lock
       - name: Support Versions Matric
         id: supported-versions-matrix
-        uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
+        uses: WyriHaximus/github-action-composer-php-versions-in-range@c066c91df855ca2563dc4ec46ac6674e0752ae65 # v2.0.0
   run:
     runs-on: ubuntu-24.04
     needs:
