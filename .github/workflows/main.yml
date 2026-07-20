@@ -14,14 +14,14 @@ jobs:
       extensions: ${{ steps.supported-versions-matrix.outputs.extensions }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           sparse-checkout: |
             composer.json
             composer.lock
       - name: Support Versions Matric
         id: supported-versions-matrix
-        uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
+        uses: WyriHaximus/github-action-composer-php-versions-in-range@7c91c459140becf43d93d3975070f308ab791949 # v1
   run:
     runs-on: ubuntu-24.04
     needs:
@@ -34,10 +34,10 @@ jobs:
     name: PHP ${{ matrix.php-versions }} Test with ${{ matrix.dependencies }} dependencies on ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ join(fromJson(needs.supported-versions-matrix.outputs.extensions), ',') }}
