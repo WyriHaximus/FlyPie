@@ -8,7 +8,7 @@ on:
 jobs:
   supported-versions-matrix:
     name: Supported Versions Matrix
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       version: ${{ steps.supported-versions-matrix.outputs.version }}
       extensions: ${{ steps.supported-versions-matrix.outputs.extensions }}
@@ -23,7 +23,7 @@ jobs:
         id: supported-versions-matrix
         uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
   run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     needs:
       - supported-versions-matrix
     strategy:
